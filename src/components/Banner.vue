@@ -38,7 +38,7 @@ export default {
         return 'backgroundImage: url( "' + this.banner.url + '")';
       },
       calHeight(){
-          return 'height:'+ (window.innerHeight -72) +'px';
+          return 'height:'+ (window.innerHeight -68) +'px';
       }
     }
 }

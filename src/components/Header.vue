@@ -8,8 +8,18 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active" v-for="item in data">
-        <a class="nav-link" href="#"><font-awesome-icon v-show="item.title != 'Reimagine' && item.title != 'Leap'" size="xs" icon="lock" /> {{item.title}}<span class="sr-only">(current)</span></a>
+      <li class="nav-item active" v-for="item in data" >
+        <a class="nav-link" href="#" v-if="signed == 'true'" >
+          <span>{{item.title}}</span>
+        </a>
+        <a class="nav-link" href="#" v-else>
+          <span v-if="item.title != 'Reimagine' && item.title != 'Leap'" class="grey" data-toggle="modal" data-target="#SignInModal">
+           <font-awesome-icon size="xs" icon="lock" /> {{item.title}}<span class="sr-only">(current)</span>
+          </span>
+           <span v-else>
+             {{item.title}}<span class="sr-only">(current)</span>
+          </span>
+        </a>
       </li>
     </ul>
   </div>
@@ -27,8 +37,8 @@ export default {
         },
         logo:{
           type: Object
-        }
-    }
-    
+        },
+        signed: String
+    },
 }
 </script>

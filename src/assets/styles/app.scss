@@ -22,6 +22,7 @@ body{
 .common-footer-color{
     background:$footer-bg-color;
     color: $white;
+    @include my-padding-mixin(80px 0)
 }
 .svg-inline--fa{
     vertical-align: baseline
@@ -30,8 +31,8 @@ body{
     border:1px solid $error-border-color;
     background: $error-background-color;
 }
-.common-footer-color{
-    @include my-padding-mixin(80px 0)
+.border-bottom-black{
+    border-bottom: 1px solid $fontColor;
 }
 .banner h3, #SignInModal h3{
     @include font-weight(normal)
@@ -43,6 +44,54 @@ body{
 }
 .btnNosign:hover{
     @include btn-hover($bgColorPrimary,$white)
+}
+#SignInModal .modal-content{
+    @include my-padding-mixin(0 10px)
+}
+.grey{
+    color: $faded-color;
+}
+.blue{
+    color:$bgColorPrimary;
+}
+#leap .imageContainer{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card{
+    box-shadow: 1px 4px 7px 2px rgba(0,0,0,0.25);
+}
+.common-card-info{
+    background: $card-bg-color;
+}
+.imageContainer img{
+    width: 100%;
+}
+.common-card-info.active{
+    background: $bgColorPrimary;
+    color: $white;
+}
+.common-card-info.active h3{
+    color: $white;
+}
+.common-border-bottom{
+    border-bottom: 1px solid $white;
+}
+.common-card{
+    @include my-padding-mixin(20px 0)
+}
+.common-card-info{
+    @include my-padding-mixin(15px)
+}
+.no-padd{
+    @include my-padding-mixin(0)
+}
+.tabView .tab-content img{
+    width: 100%;
+}
+.tabView .tab-content div{
+    @include my-padding-mixin(20px 0)
 }
 // Small screens
 @media only screen { 
@@ -107,6 +156,7 @@ body{
 @media only screen and (min-width: 64.063em) { 
     .navbar-nav li a{
         @include borderLeft;
+        font-size: 15px;
     }
     .navbar-expand-lg .navbar-nav .nav-link{
         @include my-padding-mixin(1em 1.5em)
@@ -121,8 +171,28 @@ body{
         font-size: 16.5px;
     }
     h3 {
-        font-size: 25.5px
-        ;
+        font-size: 25.5px;
+    }
+    .common-card{
+        @include my-padding-mixin(40px 0)
+    }
+    .common-card-info{
+        @include my-padding-mixin(25px)
+    }
+    .absContainer img{
+        position: absolute;
+        bottom: -47px;
+    }
+    #leap .common-page-head.leapFooter{
+        @include my-padding-mixin(120px 0);
+        margin-top: 50px;
+    }
+    .common-page-img-fix .common-page-subhead .imageContainer img{
+        position: absolute;
+        bottom: -61px;
+    }
+    .common-page-img-fix .common-page-subhead{
+        @include my-padding-mixin(50px 0 100px 0)
     }
 } /* min-width 1025px, large screens */
 

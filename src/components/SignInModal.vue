@@ -12,12 +12,12 @@
       <div class="modal-body">
           <div class="form-group">
              <div class="field" :class="{error: errors.has('firstName')}">
-                <input class="form-control" v-validate="'alpha'" name="firstName" type="text" placeholder="First Name" v-model="firstName">
+                <input class="form-control" v-validate="'required|alpha'" name="firstName" type="text" placeholder="First Name" v-model="firstName">
               </div>
           </div>
           <div class="form-group">
              <div class="field" :class="{error: errors.has('lastName')}">
-                <input class="form-control" v-validate="'alpha'" name="lastName" type="text" placeholder="Last Name" v-model="lastName">
+                <input class="form-control" v-validate="'required|alpha'" name="lastName" type="text" placeholder="Last Name" v-model="lastName">
               </div>
           </div>
           <div class="form-group">
@@ -27,16 +27,16 @@
           </div>
            <div class="form-group">
              <div class="field" :class="{error: errors.has('phone')}">
-                <input class="form-control" v-validate="'max:40'" name="phone" type="number" placeholder="Work Phone" v-model="phone">
+                <input class="form-control" v-validate="'required|max:40'" name="phone" type="number" placeholder="Work Phone" v-model="phone">
               </div>
           </div>
            <div class="form-group">
              <div class="field" :class="{error: errors.has('company')}">
-                <input class="form-control" v-validate="'alpha'" name="company" type="text" placeholder="Company" v-model="company">
+                <input class="form-control" v-validate="'required|alpha'" name="company" type="text" placeholder="Company" v-model="company">
               </div>
           </div>
           <div class="">
-          <p>{{modalData.footerInfo}}</p>
+          <p>{{modalData.footerInfo}} <a v-bind:href="modalData.link.url" target="_blank"><span>{{modalData.link.text}}</span></a></p>
         </div> 
       </div>
       <div class="modal-footer">
@@ -51,7 +51,6 @@
 <script>
   import Vue from 'vue';
   import jq from 'jquery';
-    Vue.use(jq);
     export default{
         props:{
             modalData: Object
@@ -78,9 +77,6 @@
               }
             )
           }
-        },
-        created: ()=>{
-          
         }
     }
 </script>
