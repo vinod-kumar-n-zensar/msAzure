@@ -1,0 +1,79 @@
+{
+   "general":{
+      "logo":"./src/assets/images/microsoft-logo.png",
+      "name" : "ms azure cosmos db"
+   },
+   "navigation":[
+      {
+         "title":"Reimagine",
+         "chapter": "Chapter-1",
+         "link":"index.html"
+      },
+      {
+         "title":"Leap",
+         "chapter":"Chapter-2",
+         "link":"index.html"
+      },
+      {
+         "title":"Meet",
+         "chapter": "Chapter-3",
+         "link":"index.html"
+      },
+      {
+         "title":"Control",
+         "chapter": "Chapter-4",
+         "link":"index.html"
+      },
+      {
+         "title":"Deliver",
+         "chapter": "Chapter-5:",
+         "link":"index.html"
+      },
+      {
+         "title":"Azure Cosmos DB",
+         "chapter": "Chapter-6",
+         "link":"index.html"
+      },
+    {
+        "title":"Get Started",
+         "chapter": "",
+         "link":""
+    }
+   ],
+   "banner":{
+       "url":"./src/assets/images/bannerTop.png",
+       "data":{
+           "heading": "Build modern apps that are cool for cats",
+           "body": "Are your apps up to scratch? Improve your app experience with Azure Cosmos DB's easy-to-use consistency models that give you better control over performance and availability."
+       }
+   },
+   "reimagine":{
+    "title":"Reimagine",
+    "chapter": "Chapter-1",
+    "head": "Reimagine your platform for creating amazing global apps",
+    "textPrimary":"As a developer looking to build a modern global application, you face a whole new set of challenges when it comes to data management. In order to ensure your app delivers a fast and responsive experience without lags in service, you need a highly available database system that guarantees low latency and predictable throughput. You need a system that won’t be crushed by the size of the data and can also put data as close to your users as possible—wherever your users are.",
+    "textSecondary":"We often refer to these challenges as “horizontal scaling” (or big data) and “distribution,” which essentially boil down to questions we’ve been asking for years about how to store, access, move, and change data. The difference in a global scenario, however, is that the answer doesn’t lead to changing the existing system; it requires you to reimagine the whole system."
+    },
+    "leap":{
+        "title":"Leap",
+        "chapter": "Chapter-2",
+        "head": "Leap modern app challenges and land on your feet",
+        "textPrimary":"As a developer looking to build a modern global application, you face a whole new set of challenges when it comes to data management. In order to ensure your app delivers a fast and responsive experience without lags in service, you need a highly available database system that guarantees low latency and predictable throughput. You need a system that won’t be crushed by the size of the data and can also put data as close to your users as possible—wherever your users are.",
+        "textSecondary":"We often refer to these challenges as “horizontal scaling” (or big data) and “distribution,” which essentially boil down to questions we’ve been asking for years about how to store, access, move, and change data. The difference in a global scenario, however, is that the answer doesn’t lead to changing the existing system; it requires you to reimagine the whole system."
+    },
+    "footer":{
+        "NoSign":{
+            "head": "Keep reading",
+            "info":"Learn more about creating modern apps built upon globally distributed, multi-model data, and how Microsoft can help you find the right solution for your database needs.",
+            "ButtonText": "Unlock the ebook"
+        }
+    },
+    "signinmodal":{
+        "headerInfo":"Learn more about creating modern apps built upon globally distributed, multi-model cats data, and how Microsoft can help you find the right solution for your database needs.",
+        "footerInfo":"Microsoft may use your contact information to provide updates and special offers about  and other Microsoft products and services.  You can unsubscribe at any time. To learn more you can read the ",
+        "link":{
+            "text":"privacy statement",
+            "url":"http://go.microsoft.com/fwlink/?LinkId=521839"
+        }
+    }
+}
