@@ -1,16 +1,51 @@
 <template>
     <footer>
-        <div class="container-fluid common-footer-color">
-            <div class="container">
-                <div class="text-center">
-                    <h1>{{info.NoSign.head}}</h1>
-                    <p>{{info.NoSign.info}}</p>
-                    <button type="button" data-toggle="modal" data-target="#SignInModal"  class="btn btnNosign btn-lg"><font-awesome-icon size="xs" icon="lock" /> {{info.NoSign.ButtonText}}</button>
+            <div v-if="signed != 'true'">
+                <div class="container-fluid common-footer-color">
+                    <div class="container" >
+                        <div class="text-center">
+                            <h1>{{info.NoSign.head}}</h1>
+                            <p>{{info.NoSign.info}}</p>
+                            <button type="button" data-toggle="modal" data-target="#SignInModal"  class="btn btnNosign btn-lg"><font-awesome-icon size="xs" icon="lock" /> {{info.NoSign.ButtonText}}</button>
+                        </div>
+                    </div> 
                 </div>
-            </div> 
-        </div>
-    <ms-sign-in-modal
-    :modalData="modalInfo"></ms-sign-in-modal>
+                <ms-sign-in-modal
+                :modalData="modalInfo"></ms-sign-in-modal>
+            </div>
+            <div v-else :style="calHeight">
+                <div class="container-fluid common-page-head">
+                    <div class="container">
+                        <div>
+                            <h2>{{info.signed.head}}</h2>
+                        </div>
+                        <div>
+                            <h4>{{info.signed.author}}</h4>
+                        </div>
+                    </div> 
+                </div>
+                <div class="common-banner-fix" :style="style">
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col db-link-box">
+                                <div class="text-center">
+                                    <div class="link-box col-lg-6" @click="openLink">
+                                        <h1 class="blue">{{info.signed.BtnText.head}}</h1>
+                                        <h3 class="blue">{{info.signed.BtnText.footer}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container copyriteText-container">
+                                <div class="row align-items-end">
+                                    <div class="col">
+                                        <p class="font-secondary-color">{{info.signed.coprriteText}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
     </footer>
 </template>
 
@@ -23,7 +58,21 @@
         },
         props:{
             info: Object,
-            modalInfo: Object
+            modalInfo: Object,
+            signed: String
         },
+        computed: {
+            style () {
+                return 'backgroundImage: url( "' + this.info.signed.url + '")';
+            },
+            calHeight(){
+                return 'height:'+ (window.innerHeight - 68) +'px';
+            }
+        },
+        methods:{
+            openLink:()=>{
+                alert();
+            }
+        }
     }
 </script>

@@ -1,7 +1,7 @@
 
 <template>
 <div class="banner" :style=calHeight>
-    <div class="header-row" id="header-row" :style=style>
+    <div class="header-row common-banner-fix" id="header-row" :style=style>
    <div class="container d-flex h-100 ">
    <div class="d-sm-block d-md-block d-lg-none d-xl-none align-self-center">
         <div class="row  justify-content-center">     
@@ -38,7 +38,7 @@ export default {
         return 'backgroundImage: url( "' + this.banner.url + '")';
       },
       calHeight(){
-          return 'height:'+ (window.innerHeight -68) +'px';
+          return 'height:'+ (window.innerHeight) +'px';
       }
     }
 }

@@ -39,6 +39,7 @@
     <ms-footer
     :info="data.footer"
     :modalInfo="data.signinmodal"
+    :signed="signedIn"
     ></ms-footer>
   </div>
 </template>

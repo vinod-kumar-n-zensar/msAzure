@@ -17,10 +17,10 @@
                 </div>
             </div> 
         </div>
-        <div class="container-fluid no-padd ">
+        <div class="container-fluid no-padd">
                 <div v-if="signed == 'true'">
-                <div class="container">
-                    <div class="row">
+                <div class="container common-div">
+                    <div class="row common-mob-padd-fix cat-keep-container">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <p>{{info.bodyText.basicInfo}}</p>
                             <h3>{{info.bodyText.headerInfo}}</h3>
@@ -31,14 +31,14 @@
                             <p>{{info.bodyText.ownerInfo}}</p>
                             <p class="blue">{{info.bodyText.petRoom}}</p>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer" :style=style>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer h-100" :style=style>
                             <img v-bind:src="info.urlDual" />
                         </div>
                     </div>
                     <div class="row common-card toggleVolume">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <h2>{{info.toggleVolume.headerInfo}}</h2>
-                            <div class="common-card-info" v-bind:class="{ active: toggle }">
+                            <div class="common-card-info card" v-bind:class="{ active: toggle }">
                                 <div v-show="toggle">
                                 <h3 class="blue">{{info.toggleVolume.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleVolume.toggleInfoSecondary.bodyText}}</p>
@@ -55,12 +55,12 @@
                              <img v-bind:src="info.toggleVolume.url" />
                         </div>
                     </div>
-                    <div class="row common-card toggleVelocity">
+                    <div class="row common-card toggleVelocity common-mob-padd-fix">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-block d-lg-block" >
                              <img v-bind:src="info.toggleVelocity.url" />
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="common-card-info " v-bind:class="{ active: velocity }">
+                            <div class="common-card-info card" v-bind:class="{ active: velocity }">
                                 <div v-show="velocity">
                                 <h3 class="blue">{{info.toggleVelocity.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleVelocity.toggleInfoSecondary.bodyText}}</p>
@@ -74,9 +74,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row common-card toggleVariety">
+                    <div class="row common-card toggleVariety common-mob-padd-fix">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="common-card-info" v-bind:class="{ active: variety }">
+                            <div class="common-card-info card" v-bind:class="{ active: variety }">
                                 <div v-show="variety">
                                 <h3 class="blue">{{info.toggleVariety.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleVariety.toggleInfoSecondary.bodyText}}</p>
@@ -93,12 +93,12 @@
                              <img v-bind:src="info.toggleVariety.url" />
                         </div>
                 </div>
-                <div class="row common-card toggleDynamic">
+                <div class="row common-card toggleDynamic common-mob-padd-fix">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-block d-lg-block" >
                              <img v-bind:src="info.toggleDynamic.url" />
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="common-card-info " v-bind:class="{ active: dynamic }">
+                            <div class="common-card-info card" v-bind:class="{ active: dynamic }">
                                 <div v-show="dynamic">
                                 <h3 class="blue">{{info.toggleDynamic.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleDynamic.toggleInfoSecondary.bodyText}}</p>
@@ -112,9 +112,9 @@
                             </div>
                         </div>
                 </div>
-                <div class="row common-card toggleGlobal">
+                <div class="row common-card toggleGlobal common-mob-padd-fix">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="common-card-info" v-bind:class="{ active: global }">
+                            <div class="common-card-info card" v-bind:class="{ active: global }">
                                 <div v-show="global">
                                 <h3 class="blue">{{info.toggleGlobal.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleGlobal.toggleInfoSecondary.bodyText}}</p>

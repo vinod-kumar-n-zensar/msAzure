@@ -19,8 +19,8 @@ $error-background-color: rgb(255, 234, 234);
 
 // padding mixin
 
-@mixin my-padding-mixin($some-number) {
-    padding: $some-number;
+@mixin my-padding-mixin($number) {
+    padding: $number;
   }
 
 @mixin border( $width, $style, $color) {
@@ -36,3 +36,11 @@ $error-background-color: rgb(255, 234, 234);
 @mixin font-weight($weight){
     font-weight: $weight;
 }
+@mixin bg($color) {
+    background: $color
+}
+
+// Margin mixin
+@mixin margin($number) {
+    margin: $number;
+  }

@@ -7,7 +7,6 @@ const baseURL= 'http://localhost:8080/data.json'
 
 export default{
     getCommonApi(){
-        debugger;
         return Vue.axios.get(baseURL).then((response) => {
         return response.data
         })
