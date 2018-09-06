@@ -3,9 +3,9 @@
     <ms-header
     :data="data.navigation"
     :logo="data.general"
-    :signed="signedIn"
+    :signed.sync="signedIn"
     ></ms-header>
-
+    
     <ms-banner
     :banner="data.banner"
     ></ms-banner>
@@ -17,29 +17,31 @@
 
    <ms-leap
     :info="data.leap"
-    :signed="signedIn">
+    :signed.sync="signedIn">
     </ms-leap>
 
-    <ms-meet
-    :meetInfo="data.meet">
-    </ms-meet>
+    <div v-if="signedIn == 'true'">
+      <ms-meet
+      :meetInfo="data.meet">
+      </ms-meet>
 
-    <ms-control
-    :controlInfo="data.control">
-    </ms-control>
+      <ms-control
+      :controlInfo="data.control">
+      </ms-control>
 
-    <ms-deliver
-    :deliverInfo="data.deliver">
-    </ms-deliver>
+      <ms-deliver
+      :deliverInfo="data.deliver">
+      </ms-deliver>
 
-    <ms-cosmos
-    :cosmosInfo="data.cosmos">
-    </ms-cosmos>
+      <ms-cosmos
+      :cosmosInfo="data.cosmos">
+      </ms-cosmos>
+    </div>
 
     <ms-footer
     :info="data.footer"
     :modalInfo="data.signinmodal"
-    :signed="signedIn"
+    :signed.sync="signedIn"
     ></ms-footer>
   </div>
 </template>
@@ -70,11 +72,10 @@
   props:{
     data:{
         type: Object,
-        required: true
-    }
-  },
-  data:{
-    signedIn: false
+        required: true,
+        val: ''
+    },
+    signedIn: "false"
   },
     created(){
          CommonApi.getCommonApi()

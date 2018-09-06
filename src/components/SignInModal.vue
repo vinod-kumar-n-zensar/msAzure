@@ -53,7 +53,8 @@
   import jq from 'jquery';
     export default{
         props:{
-            modalData: Object
+            modalData: Object,
+            signed: String,
         },
         data() {
           return {
@@ -71,8 +72,10 @@
                  if (!this.errors.any()) {
                     document.cookie = "signedIn = true";
                     jq('#SignInModal').modal('hide');
+                    this.$emit('update:signed','true')
                   } else{
                     document.cookie = "signedIn = false";
+                    this.$emit('update:signed','false')
                   }
               }
             )

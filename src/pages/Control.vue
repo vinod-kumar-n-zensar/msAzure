@@ -1,5 +1,5 @@
 <template>
-    <div class="control common-page-img-fix" id="control">
+    <div class="control common-page-img-fix" id="control" >
         <div class="container-fluid common-page-head">
            
             <div class="container">

@@ -96,6 +96,9 @@ body{
 }
 .tabView .tab-content div{
     @include my-padding-mixin(20px 0)
+} 
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
+    color: $bgColorPrimary;
 }
 // Tab Style Starts
 #pills-tab li a{
@@ -146,6 +149,18 @@ body{
     border: 1px solid $bgColorPrimary;
 }
 // Tab Style Ends
+//Toggle View
+.common-card-info.card.active {
+    .btn{
+        background: $white;
+        color: $bgColorPrimary;
+    }
+}
+.banner{
+    h3{
+        line-height: 1.5;
+    }
+}
 // Range Container 
 .rangeContainer span{
     display: inline-block;
@@ -168,11 +183,7 @@ body{
 }
 // Small screens
 @media only screen { 
-    
     body{font-size: 10px;}
-    .navbar-nav li a{
-        border-left: none;
-    }
     .common-page-head, .common-page-subhead{
         @include my-padding-mixin(20px 0)
     }
@@ -250,6 +261,12 @@ body{
         left: -5px;
         width:100%;
     }
+    .common-div{
+        @include my-padding-mixin(20px 0)
+    }
+    .common-topBtm-padd{
+        @include my-padding-mixin(20px 0)
+    }
  } /* min-width 641px, medium screens */
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -261,6 +278,9 @@ body{
     }
     h2 {
         font-size: 1.8em;
+    }
+    h4{
+        font-size: 18.75px;
     }
     a.nav-link{
         font-size: 16.5px;
@@ -282,9 +302,6 @@ body{
         .common-div , .common-card-padd, .common-topBtm-padd{
             @include my-padding-mixin(20px 0)
         }
-        .navbar-nav li a.nav-link {
-            border-left: 1px solid #1a1a1a;
-        }
     }
 }
 // Large screens
@@ -304,6 +321,9 @@ body{
     }
     a.nav-link{
         font-size: 16.5px;
+    }
+    h1{
+        font-weight: 700;
     }
     h3 {
         font-size: 25.5px;

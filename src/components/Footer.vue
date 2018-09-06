@@ -11,7 +11,8 @@
                     </div> 
                 </div>
                 <ms-sign-in-modal
-                :modalData="modalInfo"></ms-sign-in-modal>
+                :modalData="modalInfo"
+                :signed.sync="signed"></ms-sign-in-modal>
             </div>
             <div v-else :style="calHeight">
                 <div class="container-fluid common-page-head">
@@ -29,7 +30,7 @@
                         <div class="row align-items-center h-100">
                             <div class="col db-link-box">
                                 <div class="text-center">
-                                    <div class="link-box col-lg-6" @click="openLink">
+                                    <div class="link-box col-lg-6" @click="redirectPage(info.signed.BtnText.url)">
                                         <h1 class="blue">{{info.signed.BtnText.head}}</h1>
                                         <h3 class="blue">{{info.signed.BtnText.footer}}</h3>
                                     </div>
@@ -59,7 +60,7 @@
         props:{
             info: Object,
             modalInfo: Object,
-            signed: String
+            signed: String,
         },
         computed: {
             style () {
@@ -69,9 +70,14 @@
                 return 'height:'+ (window.innerHeight - 68) +'px';
             }
         },
+        watch:{
+            signed: function(newVal, oldVal) { // watch it
+            this.$emit('update:signed',newVal);
+            }
+        },
         methods:{
-            openLink:()=>{
-                alert();
+            redirectPage: (link)=>{
+                window.location.href = link
             }
         }
     }
