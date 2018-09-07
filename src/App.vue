@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="data != undefined">
     <ms-header
     :data="data.navigation"
     :logo="data.general"
@@ -44,6 +44,11 @@
     :signed.sync="signedIn"
     ></ms-footer>
   </div>
+  <div v-else-if="data == undefined">
+    <div class="jumbotron">
+        <h1 class="display-4"></h1>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -77,15 +82,16 @@
     },
     signedIn: "false"
   },
-    created(){
-         CommonApi.getCommonApi()
+  data: function(){
+
+  },
+    beforeMount(){
+      this.signedIn = this.getCookie('signedIn');
+      CommonApi.getCommonApi()
          .then(data =>{
            console.log("Hi the data is here",data);
              this.data = data
          })
-    },
-    beforeMount(){
-      this.signedIn = this.getCookie('signedIn');
     },
     methods:{
       getCookie: function(name) {
