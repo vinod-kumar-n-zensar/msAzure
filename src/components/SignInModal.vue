@@ -30,6 +30,14 @@
                 <input class="form-control" v-validate="'required|max:40'" name="phone" type="number" placeholder="Work Phone" v-model="phone">
               </div>
           </div>
+          <div class="form-group">
+             <div class="field" :class="{error: errors.has('country')}">
+               <select class="custom-select" v-validate="'required'" name="country" v-model="country">
+                  <option selected="selected" value="">Choose Country</option>
+                  <option v-for="countryItem in modalData.coutryList" v-bind:value="countryItem.name">{{countryItem.name}}</option>
+               </select>
+              </div>
+          </div>
            <div class="form-group">
              <div class="field" :class="{error: errors.has('company')}">
                 <input class="form-control" v-validate="'required|alpha'" name="company" type="text" placeholder="Company" v-model="company">
@@ -62,7 +70,8 @@
             firstName:'',
             lastName:'',
             phone:'',
-            company:''
+            company:'',
+            country:''
           }
         },
         methods:{

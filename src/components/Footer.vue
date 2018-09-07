@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer id="footer">
             <div v-if="signed != 'true'">
                 <div class="container-fluid common-footer-color">
                     <div class="container" >
@@ -25,7 +25,7 @@
                         </div>
                     </div> 
                 </div>
-                <div class="common-banner-fix" :style="style">
+                <div class="common-banner-fix" :style="style" id="dbcosmos">
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
                             <div class="col db-link-box">

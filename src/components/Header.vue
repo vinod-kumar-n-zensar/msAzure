@@ -9,10 +9,10 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item" v-for="(item,index) in data" :class="{ 'active': index === 0 }" @click="changeActive($event)">
-        <a class="nav-link"  v-bind:href="'#'+item.link" v-if="signed == 'true'" >
+        <a class="nav-link"  v-bind:href="'#'+item.link" v-if="signed == 'true'" v-scroll-to="{el: '#'+item.link, offset: -66,duration: 500,}">
           {{item.title}}
         </a>
-        <a class="nav-link"  @click="changeActive" v-bind:href="'#'+item.link" v-else>
+        <a class="nav-link"  @click="changeActive" v-bind:href="'#'+item.link" v-scroll-to="'#'+item.link" v-else>
           <span v-if="item.title != 'Reimagine' && item.title != 'Leap'" class="grey" data-toggle="modal" data-target="#SignInModal">
            <font-awesome-icon size="xs" icon="lock" /> {{item.title}}<span class="sr-only">(current)</span>
           </span>
