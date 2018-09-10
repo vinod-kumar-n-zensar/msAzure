@@ -8,7 +8,7 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item" v-for="(item,index) in data" :class="{ 'active': index === 0 }" @click="changeActive($event)">
+      <li class="nav-item" v-for="(item,index) in data" @click="changeActive($event)">
         <a class="nav-link"  v-bind:href="'#'+item.link" v-if="signed == 'true'" v-scroll-to="{el: '#'+item.link, offset: -66,duration: 500}">
           {{item.title}}
         </a>
@@ -39,13 +39,27 @@ export default {
     },
     methods:{
       changeActive: (that)=>{
-        jq(".nav-item").removeClass("active");
-        var ele = that.currentTarget
-        jq(ele).find('.nav-link').removeClass('active')                                            
+        jq(".navbar .nav-item").removeClass("active");
+        let ele = that.currentTarget
+        jq(ele).find('.navbar .nav-link,.navbar .nav-item').removeClass('active')                                            
         jq(ele).addClass('active')
-        
+      },
+      handleScroll: ()=>{
+        let scrollDistance = jq(window).scrollTop() + 100;
+		    // Assign active class to nav links while scolling
+		    jq('.page-section').each(function(i) {
+				if (jq(this).position().top <= scrollDistance) {
+						jq('.navbar .nav-item a.active,.navbar .nav-item').removeClass('active');
+						jq('.navbar .nav-item a').eq(i).addClass('active');
+        }
+        })
       }
-      
+    },
+    created () {
+      window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+      window.removeEventListener('scroll', this.handleScroll);
     }
 }
 

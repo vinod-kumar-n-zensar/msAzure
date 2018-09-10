@@ -1,5 +1,5 @@
 <template>
-    <div class="meet common-page-img-fix" id="meet">
+    <div class="meet common-page-img-fix page-section" id="meet">
         <div class="container-fluid common-page-head">
             <div class="container">
                 <div>

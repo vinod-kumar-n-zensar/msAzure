@@ -1,5 +1,5 @@
 <template>
-    <div class="deliver common-page-img-fix" id="deliver">
+    <div class="deliver common-page-img-fix page-section" id="deliver">
         <div class="container-fluid common-page-head">
            
             <div class="container">

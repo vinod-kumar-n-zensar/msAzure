@@ -1,5 +1,5 @@
 <template>
-    <div class="control common-page-img-fix" id="control" >
+    <div class="control common-page-img-fix page-section" id="control" >
         <div class="container-fluid common-page-head">
            
             <div class="container">
@@ -41,15 +41,15 @@
                     </div>
 
                     <div class="tabView">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
+                        <ul class="nav nav-tabs" id="controlTab" role="tablist">
+                            <li class="nav-item col-lg-4 text-center">
                                 <a class="nav-link active" id="sdc-tab" data-toggle="tab" href="#sdc" role="tab" aria-controls="sdc" aria-selected="true">{{controlInfo.tabData.tabOne.head}}</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item col-lg-4 text-center">
                                 <a class="nav-link" id="edc-tab" data-toggle="tab" href="#edc" role="tab" aria-controls="edc" aria-selected="false">{{controlInfo.tabData.tabTwo.head}}</a>
                             </li>
                         </ul>
-                        <div class="tab-content" id="myTabContent">
+                        <div class="tab-content" id="controlTabContent">
                             <div class="tab-pane fade show active" id="sdc" role="tabpanel" aria-labelledby="sdc-tab">
                                 <img v-bind:src="controlInfo.tabData.tabOne.url" alt="">
                             </div>

@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VeeValidate from 'vee-validate'    
 import  VueScrollTo from 'vue-scrollto';
 
+
 Vue.use(VueScrollTo)
 Vue.use(VeeValidate);
 library.add(faLock)

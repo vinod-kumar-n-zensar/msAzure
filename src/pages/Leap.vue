@@ -1,5 +1,5 @@
 <template>
-    <div class="leap" id="leap">
+    <div class="leap page-section" id="leap">
         <div class="container-fluid common-page-head">
             <div class="container">
                 <div>

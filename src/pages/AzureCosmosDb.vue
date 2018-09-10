@@ -1,5 +1,5 @@
 <template>
-    <div class="cosmos common-page-img-fix" id="cosmos">
+    <div class="cosmos common-page-img-fix page-section" id="cosmos">
         <div class="container-fluid common-page-head">
            
             <div class="container">

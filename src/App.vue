@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data != undefined">
+  <div v-if="data != undefined && data != '' ">
     <ms-header
     :data="data.navigation"
     :logo="data.general"
@@ -75,15 +75,13 @@
     MsCosmos
   },
   props:{
-    data:{
-        type: Object,
-        required: true,
-        val: ''
-    },
-    signedIn: "false"
+    
   },
-  data: function(){
-
+  data(){
+    return {
+      data: '',
+      signedIn: "false"
+    }
   },
     beforeMount(){
       this.signedIn = this.getCookie('signedIn');

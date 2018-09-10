@@ -2,9 +2,19 @@
 body{
     color: $fontColor;
 }
-.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
+
+// Nav Bar
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link{
     color: $fontColor;
+    text-align: center
 }
+.navbar-light .navbar-toggler{
+    border: none;
+}
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
+    color: $bgColorPrimary;
+}
+
 .common-banner-fix{
     background-repeat: no-repeat;
     height:100%;
@@ -100,9 +110,6 @@ select{
 .tabView .tab-content div{
     @include my-padding-mixin(20px 0)
 } 
-.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
-    color: $bgColorPrimary;
-}
 // Tab Style Starts
 #pills-tab li a{
     padding: 10px;
@@ -151,6 +158,28 @@ select{
     background: $bgColorPrimary;
     border: 1px solid $bgColorPrimary;
 }
+ .tabView{
+     #controlTab.nav-tabs{
+        .nav-item{
+            @include my-padding-mixin(0)
+        }
+         .nav-link.active, .nav-item.show .nav-link{
+            background-color:$bgColorPrimary;
+            color: $white;
+            border: 1px solid $bgColorPrimary;
+        }
+        .nav-link{
+            color: $fontColor;
+        }
+     }
+    
+    #controlTabContent.tab-content{
+         div{
+            border: 1px solid $bgColorPrimary;
+            @include my-padding-mixin(30px)
+        }
+    }
+ } 
 // Tab Style Ends
 //Toggle View
 .common-card-info.card.active {
@@ -184,6 +213,7 @@ select{
     @include my-padding-mixin(20px);
     cursor: pointer;
 }
+
 // Small screens
 @media only screen { 
     body{font-size: 10px;}
