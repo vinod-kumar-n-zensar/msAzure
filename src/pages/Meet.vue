@@ -16,10 +16,10 @@
         <div class="container-fluid common-page-subhead">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h3>{{meetInfo.head}}</h3>
                     </div>
-                    <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
                         <img v-bind:src="meetInfo.url" alt="">
                     </div>
                 </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="container-fluid common-div common-card-padd">
                 <div class="container border-bottom-black common-card-padd">
-                    <div class="row common-topBtm-padd">
+                    <div class="row commonGutSpaceBtm">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{meetInfo.textPrimary}}</p></div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <p>{{meetInfo.textSecondary}}</p>
@@ -36,7 +36,7 @@
                             </div>
                     </div>
                 </div>
-                <div class="container common-card-padd">
+                <div class="container commonGutSpaceTop">
                         <div class="common-topBtm-padd">
                             <h3 class="blue">{{meetInfo.dataReplicate.title}}</h3>
                             <p>{{meetInfo.dataReplicate.content}}</p>

@@ -11,18 +11,18 @@
       <form @submit.prevent="onSubmit">
       <div class="modal-body">
           <div class="form-group">
-             <div class="field" :class="{error: errors.has('firstName')}">
-                <input class="form-control" v-validate="'required|alpha'" name="firstName" type="text" placeholder="First Name" v-model="firstName">
+             <div class="field" :class="{error: errors.has('FirstName')}">
+                <input class="form-control" v-validate="'required|alpha'" name="FirstName" type="text" placeholder="First Name" v-model="FirstName">
               </div>
           </div>
           <div class="form-group">
-             <div class="field" :class="{error: errors.has('lastName')}">
-                <input class="form-control" v-validate="'required|alpha'" name="lastName" type="text" placeholder="Last Name" v-model="lastName">
+             <div class="field" :class="{error: errors.has('LastName')}">
+                <input class="form-control" v-validate="'required|alpha'" name="LastName" type="text" placeholder="Last Name" v-model="LastName">
               </div>
           </div>
           <div class="form-group">
-             <div class="field" :class="{error: errors.has('email')}">
-                <input class="form-control" type="email" name="email" placeholder="Work Email" v-validate="'required|email'" v-model="email">
+             <div class="field" :class="{error: errors.has('Email')}">
+                <input class="form-control" type="Email" name="Email" placeholder="Work Email" v-validate="'required|email'" v-model="Email">
               </div>
           </div>
            <div class="form-group">
@@ -31,16 +31,24 @@
               </div>
           </div>
           <div class="form-group">
-             <div class="field" :class="{error: errors.has('country')}">
-               <select class="custom-select" v-validate="'required'" name="country" v-model="country">
+             <div class="field" :class="{error: errors.has('Country')}">
+               <select class="custom-select" v-validate="'required'" name="Country" v-model="Country">
                   <option selected="selected" value="">Choose Country</option>
-                  <option v-for="countryItem in modalData.coutryList" v-bind:value="countryItem.name">{{countryItem.name}}</option>
+                  <option v-for="CountryItem in modalData.coutryList" v-bind:value="CountryItem.name">{{CountryItem.name}}</option>
                </select>
               </div>
           </div>
            <div class="form-group">
-             <div class="field" :class="{error: errors.has('company')}">
-                <input class="form-control" v-validate="'required|alpha'" name="company" type="text" placeholder="Company" v-model="company">
+             <div class="field" :class="{error: errors.has('Company')}">
+                <input class="form-control" v-validate="'required|alpha'" name="Company" type="text" placeholder="Company" v-model="Company">
+              </div>
+          </div>
+          <div class="form-group">
+             <div class="field" :class="{error: errors.has('jobRole')}">
+               <select class="custom-select" v-validate="'required'" name="jobRole" v-model="jobRole">
+                  <option selected="selected" value="">Choose Job Role</option>
+                  <option v-for="jobRole in modalData.jobRole" v-bind:value="jobRole.name">{{jobRole.name}}</option>
+               </select>
               </div>
           </div>
           <div class="">
@@ -52,26 +60,31 @@
         <button type="submit" :disabled="errors.any()" ref="btnSubmit" class="btn btn-primary">Get Started</button>
       </div>
       </form>
+      <form id="mktoForm_14282"></form>
     </div>
   </div>
 </div>
 </template>
+<script>MktoForms2.loadForm("//app-sj18.marketo.com", "157-GQE-382", 10595);</script>
+import func from "./vue-temp/vue-editor-bridge";
+
 <script>
   import Vue from 'vue';
   import jq from 'jquery';
     export default{
         props:{
             modalData: Object,
-            signed: String,
         },
         data() {
           return {
-            email: '',
-            firstName:'',
-            lastName:'',
+            FirstName:'',
+            LastName:'',
+            Email: '',
             phone:'',
-            company:'',
-            country:''
+            Company:'',
+            Country:'',
+            jobRole:'',
+            signed:''
           }
         },
         methods:{
@@ -79,16 +92,36 @@
             this.$validator.validateAll().then(
               result =>{
                  if (!this.errors.any()) {
-                    document.cookie = "signedIn = true";
-                    jq('#SignInModal').modal('hide');
-                    this.$emit('update:signed','true')
+                    jq('.mktoForm  #FirstName').val(this.FirstName);
+                    jq('.mktoForm  #LastName').val(this.LastName);
+                    jq('.mktoForm  #Email').val(this.Email);
+                    jq('.mktoForm  #Company').val(this.Company);
+                    jq('.mktoForm  #Country option[value="' + this.Country + '"]').attr("selected", "selected");
+                    jq('.mktoForm  #Title option[value="' + this.jobRole + '"]').attr("selected", "selected");
+                    jq('.mktoButton').trigger('click');
                   } else{
                     document.cookie = "signedIn = false";
-                    this.$emit('update:signed','false')
+                    this.$emit('update:signed','false');
                   }
               }
             )
-          }
+          },
+          callMktoForms(){
+            let that = this;
+            MktoForms2.loadForm("//app-sj18.marketo.com", "157-GQE-382", 14282,
+                    function(form){
+                      form.onSuccess(function(){
+                        document.cookie = "signedIn = true";
+                        jq('#SignInModal').modal('hide');
+                        that.$emit('update:signed','true'); 
+
+                        return false;
+                      });
+                    })
+          },
+        },
+        beforeMount(){
+          this.callMktoForms();
         }
     }
 </script>

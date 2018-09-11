@@ -33,6 +33,9 @@ body{
 .common-page-subhead{
     background:$page-sub-head-color;
 }
+.common-div{
+    @include my-padding-mixin(50px 0)
+}
 .common-footer-color{
     background:$footer-bg-color;
     color: $white;
@@ -196,9 +199,9 @@ select{
 // Range Container 
 .rangeContainer span{
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: sub;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
 }
 .rangeContainer span.Higher{
     @include bg($bgColorPrimary)
@@ -213,13 +216,36 @@ select{
     @include my-padding-mixin(20px);
     cursor: pointer;
 }
+// Animations
 
+.animate {
+    transition-delay: .1s;
+    transition-duration: .25s;
+    transition-timing-function: ease-in;
+  }
+   
+  .slide-up {
+    transform: translateY(0)
+  }
+   
+  .slide-up.animate-active {
+    transform: translateY(-100px)
+  }
+  .mktoForm{
+      display: none;
+  }
+  .commonGutSpaceBtm{
+    margin-bottom: 30px;
+  }
+  .commonGutSpaceTop{
+    margin-top: 30px;
+  }
+  .common-page-head, .common-page-subhead{
+    @include my-padding-mixin(40px 0)
+}
 // Small screens
 @media only screen { 
     body{font-size: 10px;}
-    .common-page-head, .common-page-subhead{
-        @include my-padding-mixin(20px 0)
-    }
     p{
         font-size: 15px;
     }
@@ -244,9 +270,6 @@ select{
     a.nav-link{
         font-size: 16.5px;
     }
-    .common-div{
-        @include my-padding-mixin(20px 0)
-    }
     .toggleVolume{
         @include margin(20px 0 0 0)
     }
@@ -257,8 +280,8 @@ select{
         padding-right:15px;
         padding-left:15px;
     }
-    .common-topBtm-padd{
-        @include my-padding-mixin(20px 0)
+    .common-page-head, .common-page-subhead {
+        padding: 20px 0;
     }
     #cosmos {
         li.nav-item{
@@ -285,32 +308,23 @@ select{
 
 // Medium screens
 @media only screen and (min-width: 40.063em) {
-    .cat-keep-container{
-        @include my-padding-mixin(50px 0 30px 0)
-    }
     .common-page-img-fix .common-page-subhead .imageContainer img{
         position: absolute;
-        bottom: -5px;
+        bottom: 4px;
         left: -5px;
-        width:100%;
-    }
-    .common-div{
-        @include my-padding-mixin(20px 0)
-    }
-    .common-topBtm-padd{
-        @include my-padding-mixin(20px 0)
+        width: 100%;
     }
  } /* min-width 641px, medium screens */
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-    h3 {
-        font-size: 1.6em;
-    }
     h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
     h2 {
-        font-size: 1.8em;
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 2em;
     }
     h4{
         font-size: 18.75px;
@@ -323,17 +337,10 @@ select{
 
  @media only screen and (width : 1024px) {
     .common-page-img-fix {
-        .common-page-head, .common-page-subhead{
-            padding: 60px 0;
-        }
-        
         .common-page-subhead .imageContainer img{
             position: absolute;
             bottom: -26px;
             left: -5px;
-        }
-        .common-div , .common-card-padd, .common-topBtm-padd{
-            @include my-padding-mixin(20px 0)
         }
     }
 }
@@ -346,11 +353,11 @@ select{
     .navbar-expand-lg .navbar-nav .nav-link{
         @include my-padding-mixin(1em 1.5em)
     }
-    .common-page-head, .common-page-subhead{
-        @include my-padding-mixin(50px 0)
+    .common-page-head{
+        @include my-padding-mixin(52px 0)
     }
-    .common-div{
-        @include my-padding-mixin(100px 0)
+    .common-page-subhead{
+        @include my-padding-mixin(70px 0)
     }
     a.nav-link{
         font-size: 16.5px;
@@ -370,10 +377,6 @@ select{
     .absContainer img{
         position: absolute;
         bottom: -47px;
-    }
-    #leap .common-page-head.leapFooter{
-        @include my-padding-mixin(120px 0);
-        margin-top: 50px;
     }
     .common-page-img-fix .common-page-subhead .imageContainer img{
         position: absolute;

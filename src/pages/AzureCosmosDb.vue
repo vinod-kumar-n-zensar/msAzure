@@ -17,10 +17,10 @@
         <div class="container-fluid common-page-subhead">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h3>{{cosmosInfo.head}}</h3>
                     </div>
-                    <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
                         <img v-bind:src="cosmosInfo.url" alt="">
                     </div>
                 </div>
@@ -28,8 +28,8 @@
             </div> 
         </div>
         <div class="container-fluid common-div">
-                <div class="container border-bottom-black">
-                    <div class="row">
+                <div class="container border-bottom-black commonGutSpaceBtm">
+                    <div class="row commonGutSpaceBtm">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <p>{{cosmosInfo.textPrimary}}</p>
                             <p v-html="cosmosInfo.textContent">{{cosmosInfo.textContent}}</p>
@@ -69,18 +69,18 @@
                         </div>
                     </div>
                     </div>
-                    <div class="border-bottom-black common-card-padd imageContainer common-topBtm-padd">
+                    <div class="border-bottom-black common-div imageContainer commonGutSpaceBtm">
                         <img v-bind:src="cosmosInfo.appData.footer.url" alt="">
                     </div>
-                    <div class="row common-card-padd">
-                        <div class="col-lg-3 col-xs-12 col-sm-12">
-                            <div class="row common-topBtm-padd">
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-12 col-sm-12 col-md-4">
+                            <div class="row">
                                 <div v-for="range in cosmosInfo.appData.footer.range" class="col-lg-6 col-xs-6 col-sm-6 rangeContainer">
                                     <p><span :class="range.info"></span> {{range.info}}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-9">
+                        <div class="col-lg-9 commonGutSpaceTop">
                           <p>{{cosmosInfo.appData.footer.noteData}}</p>
                         </div>
                     </div>

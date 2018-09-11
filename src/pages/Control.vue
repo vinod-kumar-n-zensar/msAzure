@@ -17,10 +17,10 @@
         <div class="container-fluid common-page-subhead">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h3>{{controlInfo.head}}</h3>
                     </div>
-                    <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
                         <img v-bind:src="controlInfo.url" alt="">
                     </div>
                 </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="container-fluid common-div">
                 <div class="container">
-                    <div class="row">
+                    <div class="row commonGutSpaceBtm">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <p>{{controlInfo.textPrimary}}</p>
                             <p v-html="controlInfo.textContent">{{controlInfo.textContent}}</p>

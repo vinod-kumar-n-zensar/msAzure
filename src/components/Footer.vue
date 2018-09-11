@@ -52,7 +52,6 @@
 
 <script>
     import MsSignInModal from './SignInModal.vue';
-    let data = '';
     export default{
         components:{
             MsSignInModal
@@ -60,7 +59,7 @@
         props:{
             info: Object,
             modalInfo: Object,
-            signed: String,
+            signed: String
         },
         computed: {
             style () {
