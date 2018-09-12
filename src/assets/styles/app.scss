@@ -243,6 +243,26 @@ select{
   .common-page-head, .common-page-subhead{
     @include my-padding-mixin(40px 0)
 }
+// Safari Fix
+.flexthis {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  
+  .flexthis .col-md-6 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .row.flexthis:after, .row.flexthis:before{
+    display: none;
+  }
 // Small screens
 @media only screen { 
     body{font-size: 10px;}

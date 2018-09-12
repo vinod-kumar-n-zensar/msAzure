@@ -8,15 +8,14 @@ import { faLock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VeeValidate from 'vee-validate'    
 import  VueScrollTo from 'vue-scrollto';
-import VueAnimate from 'vue-animate-scroll'
-
-Vue.use(VueAnimate)
 Vue.use(VueScrollTo)
 Vue.use(VeeValidate);
 library.add(faLock)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render (h){
+    return h(App);
+}
 })
 

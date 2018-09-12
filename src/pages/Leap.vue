@@ -17,7 +17,7 @@
                 </div>
             </div> 
         </div>
-        <div class="container-fluid no-padd">
+        <div class="container-fluid">
                 <div v-if="signed == 'true'">
                 <div class="container common-div">
                     <div class="row common-mob-padd-fix cat-keep-container">
@@ -132,7 +132,15 @@
                         </div>
                 </div>
             </div>
-                <div class="common-page-head leapFooter common-border-bottom">
+        </div>
+        <div class="container common-div" v-else>
+            <div class="row flexthis">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{info.textPrimary}}</p></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{info.textSecondary}}</p></div>
+            </div>
+        </div>
+    </div> 
+    <div class="common-page-head leapFooter common-border-bottom" v-if="signed == 'true'">
                     <div class="container common-abs-container">
                     <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -143,15 +151,7 @@
                             </div>
                     </div>
                     </div>
-                </div>
-        </div>
-        <div class="container" v-else>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{info.textPrimary}}</p></div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{info.textSecondary}}</p></div>
-            </div>
-        </div>
-    </div> 
+    </div>
 </div>
 </template>
 
