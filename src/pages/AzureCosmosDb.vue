@@ -21,7 +21,7 @@
                         <h3>{{cosmosInfo.head}}</h3>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-sm-none d-none d-md-block d-lg-block d-xl-block">
-                        <img v-bind:src="cosmosInfo.url" alt="">
+                        <img data-aos="fade-up-left" v-bind:src="cosmosInfo.url" alt="">
                     </div>
                 </div>
                 
@@ -40,17 +40,17 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="border-bottom-black common-card-padd common-topBtm-padd">
+                    <div class="border-bottom-black paddTop">
                         <div>
                             <h3 class="blue">{{cosmosInfo.appData.title}}</h3>
                             <p>{{cosmosInfo.appData.content}}</p>
                         </div>
-                        <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
+                        <ul class="nav nav-pills mb-3 nav-fill commonGutSpaceTop commonGutSpaceBtm" id="pills-tab" role="tablist">
                         <li class="nav-item" v-for="(items,index) in cosmosInfo.appData.navData">
                             <a class="nav-link " :class="{ 'active': index === 0 }" v-bind:id="'pills-'+items.content.link+'-tab'" data-toggle="pill" v-bind:href="'#pills-'+items.content.link" role="tab" aria-controls="strong-home" aria-selected="true"><strong>{{items.content.title}}</strong></a>
                         </li>
                     </ul>
-                    <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-content commonGutSpaceTop commonGutSpaceBtm" id="pills-tabContent">
                         <div v-for="(items,index) in cosmosInfo.appData.navData" class="tab-pane fade" v-bind:id="'pills-'+items.content.link" role="tabpanel" aria-labelledby="pills-strong-tab" :class="{ 'active show': index === 0 }">
                             <div class="row">
                                 <div class="col-lg-3  col-xs-12 col-sm-12 text-center">
@@ -72,7 +72,7 @@
                     <div class="border-bottom-black common-div imageContainer commonGutSpaceBtm">
                         <img v-bind:src="cosmosInfo.appData.footer.url" alt="">
                     </div>
-                    <div class="row">
+                    <div class="row paddTop">
                         <div class="col-lg-3 col-xs-12 col-sm-12 col-md-4">
                             <div class="row">
                                 <div v-for="range in cosmosInfo.appData.footer.range" class="col-lg-6 col-xs-6 col-sm-6 rangeContainer">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-9 commonGutSpaceTop">
+                        <div class="col-lg-9">
                           <p>{{cosmosInfo.appData.footer.noteData}}</p>
                         </div>
                     </div>

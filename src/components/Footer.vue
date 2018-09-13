@@ -14,7 +14,7 @@
                 :modalData="modalInfo"
                 :signed.sync="signed"></ms-sign-in-modal>
             </div>
-            <div v-else :style="calHeight">
+            <div v-else  :style="{height: windowHeight + 'px'}">
                 <div class="container-fluid common-page-head">
                     <div class="container">
                         <div>
@@ -59,15 +59,13 @@
         props:{
             info: Object,
             modalInfo: Object,
-            signed: String
+            signed: String,
+            windowHeight: Number,
         },
         computed: {
             style () {
                 return 'backgroundImage: url( "' + this.info.signed.url + '")';
             },
-            calHeight(){
-                return 'height:'+ (window.innerHeight - 68) +'px';
-            }
         },
         watch:{
             signed: function(newVal, oldVal) { // watch it

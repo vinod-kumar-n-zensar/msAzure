@@ -1,6 +1,6 @@
 
 <template>
-<div class="banner" :style=calHeight>
+<div class="banner" :style="{height: windowHeight + 'px'}">
     <div class="header-row common-banner-fix" id="header-row" :style=style>
    <div class="container d-flex h-100 ">
    <div class="d-sm-block d-md-block d-lg-none d-xl-none align-self-center">
@@ -30,15 +30,13 @@ export default {
         banner:{
             type: Object,
             required: true
-        }
+        },
+        windowHeight: Number,
     },
     computed: {
       style () {
         return 'backgroundImage: url( "' + this.banner.url + '")';
       },
-      calHeight(){
-          return 'height:'+ (window.innerHeight) +'px';
-      }
     }
 }
 </script>

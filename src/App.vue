@@ -8,6 +8,7 @@
     
     <ms-banner
     :banner="data.banner"
+    :windowHeight.sync="windowHeight"
     ></ms-banner>
 
 
@@ -42,6 +43,7 @@
     :info="data.footer"
     :modalInfo="data.signinmodal"
     :signed.sync="signedIn"
+    :windowHeight.sync="windowHeight"
     ></ms-footer>
   </div>
   <div v-else-if="data == undefined">
@@ -80,7 +82,8 @@
   data(){
     return {
       data: '',
-      signedIn: "false"
+      signedIn: "false",
+      windowHeight: window.innerHeight,
     }
   },
     beforeMount(){
@@ -91,11 +94,23 @@
              this.data = data
          })
     },
+    watch: {
+            windowHeight(newHeight, oldHeight) {
+            this.txt = `it changed to ${newHeight} from ${oldHeight}`;
+        }
+    },
     methods:{
       getCookie: function(name) {
         var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
         return v ? v[2] : null;
       }
-    }
+    },
+    mounted() {
+            this.$nextTick(() => {
+            window.addEventListener('resize', () => {
+            this.windowHeight = window.innerHeight
+        });
+        })
+      }
 }
 </script>
