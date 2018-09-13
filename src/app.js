@@ -19,12 +19,13 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 new Vue({
   created(){
     AOS.init({
+      easing: 'ease-in-out-sine',
       duration: 1200,
     });
   },
   el: '#app',
   render (h){
     return h(App);
-}
+},
 })
 
