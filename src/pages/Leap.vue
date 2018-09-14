@@ -32,7 +32,7 @@
                             <p class="blue">{{info.bodyText.petRoom}}</p>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer h-100" :style=style>
-                            <img  data-aos="zoom-in" v-bind:src="info.urlDual" />
+                            <img  data-aos="zoom-in" v-bind:src="info.urlDual"  data-aos-anchor-placement="top-center"/>
                         </div>
                     </div>
                     <div class="row common-card toggleVolume">
@@ -45,10 +45,11 @@
                                 </div>
                                 <div v-show="!toggle" >
                                     <h3 class="blue">{{info.toggleVolume.toggleInfoPrimary.headerInfo}}</h3>
+                                    <p><strong>{{info.toggleVolume.toggleInfoPrimary.title}}</strong></p>
                                     <p>{{info.toggleVolume.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleVolume.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="toggle = !toggle"><span v-show="toggle">{{info.toggleVolume.toggleInfoSecondary.btnText}}</span><span v-show="!toggle">{{info.toggleVolume.toggleInfoPrimary.btnText}}</span></button>
+                            <button class="btn btn-primary btn-lg" v-on:click="toggle = !toggle"><span v-show="toggle"><font-awesome-icon size="xs" icon="arrow-left" /> {{info.toggleVolume.toggleInfoSecondary.btnText}}</span><span v-show="!toggle">{{info.toggleVolume.toggleInfoPrimary.btnText}} <font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-none d-lg-block" >
@@ -67,10 +68,11 @@
                                 </div>
                                 <div v-show="!velocity" >
                                     <h3 class="blue">{{info.toggleVelocity.toggleInfoPrimary.headerInfo}}</h3>
+                                    <p><strong>{{info.toggleVelocity.toggleInfoPrimary.title}}</strong></p>
                                     <p>{{info.toggleVelocity.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleVelocity.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="velocity = !velocity"><span v-show="velocity">{{info.toggleVelocity.toggleInfoSecondary.btnText}}</span><span v-show="!velocity">{{info.toggleVelocity.toggleInfoPrimary.btnText}}</span></button>
+                            <button class="btn btn-primary btn-lg" v-on:click="velocity = !velocity"><span v-show="velocity"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleVelocity.toggleInfoSecondary.btnText}}</span><span v-show="!velocity">{{info.toggleVelocity.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                     </div>
@@ -82,11 +84,12 @@
                                     <p>{{info.toggleVariety.toggleInfoSecondary.bodyText}}</p>
                                 </div>
                                 <div v-show="!variety" >
-                                    <h3 class="blue">{{info.toggleVariety.toggleInfoPrimary.headerInfo}}</h3>
+                                    <h3 class="blue">{{info.toggleVariety.toggleInfoPrimary.headerInfo}} </h3>
+                                    <p><strong>{{info.toggleVariety.toggleInfoPrimary.title}}</strong></p>
                                     <p>{{info.toggleVariety.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleVariety.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="variety = !variety"><span v-show="variety">{{info.toggleVariety.toggleInfoSecondary.btnText}}</span><span v-show="!variety">{{info.toggleVariety.toggleInfoPrimary.btnText}}</span></button>
+                            <button class="btn btn-primary btn-lg" v-on:click="variety = !variety"><span v-show="variety"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleVariety.toggleInfoSecondary.btnText}}</span><span v-show="!variety">{{info.toggleVariety.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-none d-lg-block" >
@@ -104,11 +107,12 @@
                                     <p>{{info.toggleDynamic.toggleInfoSecondary.bodyText}}</p>
                                 </div>
                                 <div v-show="!dynamic" >
-                                    <h3 class="blue">{{info.toggleDynamic.toggleInfoPrimary.headerInfo}}</h3>
+                                    <h3 class="blue">{{info.toggleDynamic.toggleInfoPrimary.headerInfo}} </h3>
+                                    <p><strong>{{info.toggleDynamic.toggleInfoPrimary.title}}</strong></p>
                                     <p>{{info.toggleDynamic.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleDynamic.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="dynamic = !dynamic"><span v-show="dynamic">{{info.toggleDynamic.toggleInfoSecondary.btnText}}</span><span v-show="!dynamic">{{info.toggleDynamic.toggleInfoPrimary.btnText}}</span></button>
+                            <button class="btn btn-primary btn-lg" v-on:click="dynamic = !dynamic"><span v-show="dynamic"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleDynamic.toggleInfoSecondary.btnText}}</span><span v-show="!dynamic">{{info.toggleDynamic.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                 </div>
@@ -121,10 +125,11 @@
                                 </div>
                                 <div v-show="!global" >
                                     <h3 class="blue">{{info.toggleGlobal.toggleInfoPrimary.headerInfo}}</h3>
+                                    <p><strong>{{info.toggleGlobal.toggleInfoPrimary.title}}</strong></p>
                                     <p>{{info.toggleGlobal.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleGlobal.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="global = !global"><span v-show="global">{{info.toggleGlobal.toggleInfoSecondary.btnText}}</span><span v-show="!global">{{info.toggleGlobal.toggleInfoPrimary.btnText}}</span></button>
+                            <button class="btn btn-primary btn-lg" v-on:click="global = !global"><span v-show="global"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleGlobal.toggleInfoSecondary.btnText}}</span><span v-show="!global">{{info.toggleGlobal.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-none d-lg-block" >
@@ -147,7 +152,7 @@
                                 <p>{{info.footerContent.content}}</p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer absContainer" >
-                                <img data-aos="zoom-in"  v-bind:src="info.footerContent.url" />
+                                <img data-aos="zoom-in"  data-aos-anchor-placement="top-center" v-bind:src="info.footerContent.url" />
                             </div>
                     </div>
                     </div>

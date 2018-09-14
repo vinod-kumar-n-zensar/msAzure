@@ -34,7 +34,7 @@ import jq from 'jquery';
 import AOS from 'aos';
 export default {
     props:{
-        data: Object,
+        data: Array,
         logo: Object,
         signed: String
     },

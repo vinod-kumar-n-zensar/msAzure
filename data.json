@@ -115,7 +115,7 @@
                 "btnText":"Click for solution"
             },
             "toggleInfoSecondary":{
-                "title":"{relax the schema}",
+                "title":"relax the schema",
                 "headerInfo":"Build a zoo.",
                 "bodyText":"Increase the types of data you accept and improve your ability to find and query it by changing how you index it. In your cat business, this would mean adding all sorts of cages, habitats, and additional facilities that allow you to keep all types of different cats. You would need to be sure to organize (index) them well, so they entered your service and left as quickly and efficiently as possible.",
                 "btnText":"Click for scenario"
@@ -124,14 +124,14 @@
         "toggleDynamic":{
             "url": "./src/assets/images/chapter2_cat4-image.jpg",
             "toggleInfoPrimary":{
-                "title":"{dynamic content}",
+                "title":"dynamic content",
                 "headerInfo":"Owners drop off and pick up all day!",
                 "bodyText":"You start offering by-the-hour cat storage, in which people can bring in their cats according to cage availability. You need a way to let cat owners access the cats and the cages directly to change them as required. This illustrates the challenge of shifting from static to dynamic content. It’s no longer safe to assume that the data you put in this morning is the same data now. You need to allow for others to change it and for that change to become the new data truth.",
                 "extraInfo":"To address the issue, you could….",
                 "btnText":"Click for solution"
             },
             "toggleInfoSecondary":{
-                "title":"{replicate locally}",
+                "title":"replicate locally",
                 "headerInfo":"Clone cats nearby.",
                 "bodyText":"Improve throughput, availability, and durability by making exact copies. In your cat business, this would be strange but effective. You could clone the cats that come in and store them at your neighbors’ houses in identical living rooms, so cat owners could go to any one of the houses to drop off or pick up their cats. In a database, we make exact copies of data and let users query any of them to speed up how quickly they can access that data.",
                 "btnText":"Click for scenario"
@@ -140,7 +140,7 @@
         "toggleGlobal":{
             "url": "./src/assets/images/chapter2_cat5-image.jpg",
             "toggleInfoPrimary":{
-                "title":"{global availability}",
+                "title":"global availability",
                 "headerInfo":"Cats come from anywhere!",
                 "bodyText":"Word gets out about your business. People across the world want to keep their cats with you, all sizes and species of cats for all lengths of time. Your house is in one physical location. This illustrates the problem of global availability. Moving data (or cats) around the world, even at the speed of light, is more complicated and time consuming than moving it locally.",
                 "extraInfo":"To address the issue, you could….",

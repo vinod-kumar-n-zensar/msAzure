@@ -52,7 +52,10 @@
               </div>
           </div>
           <div class="">
-          <p>{{modalData.footerInfo}} <a v-bind:href="modalData.link.url" target="_blank"><span>{{modalData.link.text}}</span></a></p>
+          <div class="custom-control custom-checkbox checkbox-circle my-1 mr-sm-2">
+            <input type="checkbox" class="custom-control-input" id="customControlInline">
+            <label class="custom-control-label" for="customControlInline"><p>{{modalData.footerInfo}} <a v-bind:href="modalData.link.url" target="_blank"><span>{{modalData.link.text}}</span></a></p></label>
+          </div>
         </div> 
       </div>
       <div class="modal-footer">
@@ -98,6 +101,11 @@ import func from "./vue-temp/vue-editor-bridge";
                     jq('.mktoForm  #Company').val(this.Company);
                     jq('.mktoForm  #Country option[value="' + this.Country + '"]').attr("selected", "selected");
                     jq('.mktoForm  #Title option[value="' + this.jobRole + '"]').attr("selected", "selected");
+                    if(jq('#customControlInline:checked').length > 0){
+                      jq('.mktoCheckboxList input').prop('checked', true)
+                    }else{
+                      jq('.mktoCheckboxList input').prop('checked', false)
+                    }
                     jq('.mktoButton').trigger('click');
                   } else{
                     document.cookie = "signedIn = false";

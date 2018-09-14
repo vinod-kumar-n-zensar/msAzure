@@ -11,7 +11,6 @@
     :windowHeight.sync="windowHeight"
     ></ms-banner>
 
-
     <ms-reimagine
     :info="data.reimagine">
     </ms-reimagine>

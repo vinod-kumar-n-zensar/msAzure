@@ -1,5 +1,5 @@
 <template>
-    <div class="reimagine page-section" id="reimagine">
+    <div class="reimagine page-section"  id="reimagine">
         <div class="container-fluid common-page-head">
             <div class="container">
                 <div>

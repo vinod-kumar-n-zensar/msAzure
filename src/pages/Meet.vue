@@ -9,7 +9,7 @@
                     <h1>{{meetInfo.title}}</h1>
                 </div>
                 <div class="d-lg-none imageContainer d-xl-none d-md-none">
-                    <img v-bind:src="meetInfo.urlsm" alt="">
+                    <img data-aos="fade-left" v-bind:src="meetInfo.urlsm" alt="">
                 </div>
             </div> 
         </div>
