@@ -1,6 +1,6 @@
 
 <template>
-<div class="banner" :style="{height: windowHeight + 'px'}">
+<div class="banner" :style="{height: windowHeight + 'px'}" ref="banner-box">
     <div class="header-row common-banner-fix" id="header-row" :style=style>
    <div class="container d-flex h-100 ">
    <div class="d-sm-block d-md-block d-lg-none d-xl-none align-self-center">

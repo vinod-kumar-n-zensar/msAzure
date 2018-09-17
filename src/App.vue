@@ -4,6 +4,7 @@
     :data="data.navigation"
     :logo="data.general"
     :signed.sync="signedIn"
+    :windowHeight.sync="windowHeight"
     ></ms-header>
     
     <ms-banner

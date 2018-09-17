@@ -36,7 +36,8 @@ export default {
     props:{
         data: Array,
         logo: Object,
-        signed: String
+        signed: String,
+        windowHeight: Number
     },
     methods:{
       changeActive: (that)=>{
@@ -52,6 +53,8 @@ export default {
 				if (jq(this).position().top <= scrollDistance) {
 						jq('.navbar .nav-item a.active,.navbar .nav-item').removeClass('active');
 						jq('.navbar .nav-item a').eq(i).addClass('active');
+        } else if(scrollDistance < jq('.banner').height()){
+          jq('.navbar .nav-item a.active,.navbar .nav-item').removeClass('active');
         }
         })
          AOS.refresh();

@@ -185,6 +185,9 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
         }
         .nav-link{
             color: $fontColor;
+            font-weight: 600;
+            padding: 15px 10px;
+            font-size: 1.17rem;
         }
      }
     
@@ -229,6 +232,14 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
     @include border(2px,solid,$bgColorPrimary);
     @include bg($white);
     @include my-padding-mixin(20px);
+}
+footer{
+    .common-page-head{
+        h2{
+            line-height: 1.4;
+            font-weight: 600;
+        }
+    }
 }
 .cursor-pointer{
     cursor: pointer
@@ -462,8 +473,18 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
     .common-card-padd{
         @include my-padding-mixin(50px 0)
     }
-    footer .common-page-head h2{
-        line-height: 60px;
+    footer{
+        .common-page-head{
+            h2{
+                line-height: 1.4;
+                font-weight: normal;
+            }
+            h4{
+                font-weight: 600;
+                font-size: 18.75px;
+            
+            }
+        }       
     }
     .db-link-box{
         margin-top: 40%;
