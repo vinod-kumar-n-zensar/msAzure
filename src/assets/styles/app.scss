@@ -7,7 +7,6 @@ body{
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link{
     color: $fontColor;
     text-align: center;
-    border-top: 2px solid transparent;
     
 }
 .navbar-light .navbar-toggler{
@@ -15,7 +14,6 @@ body{
 }
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
     color: $bgColorPrimary;
-    border-top: 2px solid $bgColorPrimary;
 }
 
 .common-banner-fix{
@@ -52,12 +50,18 @@ body{
 .svg-inline--fa{
     vertical-align: baseline
 }
-.field.error input,.field.error select {
+.field.error input,.field.error select,.v-select.searchable.error .dropdown-toggle {
     border:1px solid $error-border-color;
     background: $error-background-color;
 }
-select{
+.dropdown-toggle::after{
+    border: none;
+}
+select, .v-select input[type=search], .v-select input[type=search]:focus, .v-select.single .selected-tag, .vs__selected-options{
     font-size: 1rem;
+}
+.v-select .dropdown-menu{
+    max-height: 300px !important;
 }
 .border-bottom-black{
     border-bottom: 1px solid $fontColor;
@@ -193,11 +197,14 @@ select{
  } 
 // Tab Style Ends
 //Toggle View
+#leap{
 .common-card-info.card.active {
     .btn{
-        background: $white;
-        color: $bgColorPrimary;
+        background: $bgColorPrimary;
+        color: $white;
+        border: 2px solid $white;
     }
+}
 }
 .banner{
     h3{
@@ -222,7 +229,9 @@ select{
     @include border(2px,solid,$bgColorPrimary);
     @include bg($white);
     @include my-padding-mixin(20px);
-    cursor: pointer;
+}
+.cursor-pointer{
+    cursor: pointer
 }
 // Animations
 
@@ -261,56 +270,22 @@ select{
 #leap{
     .btn-primary{
         position: relative;
+        background: $white;
+        color: $bgColorPrimary;
+        font-size: 21px;
+        border: 2px solid $bgColorPrimary;
     }
 .fa-arrow-right{
     position: absolute;
-    right: 5px;
+    right: 14px;
     top: 18px;
-     -webkit-animation: bounce .5s infinite;
-    animation: bounce .5s infinite;
-    animation-direction: alternate;
   }
   .fa-arrow-left{
     position: absolute;
-    left: 5px;
+    left: 14px;
     top: 16px;
-    -webkit-animation: bounce-left .5s infinite;
-    animation: bounce-left .5s infinite;
-    animation-direction: alternate;
   }
 }
-  @keyframes bounce {
-  0% {
-    margin-top:0;
-  }
-  100% {
-    margin-right:20px;
-  }
-}
-@-webkit-keyframes bounce {
-  0% {
-    margin-top:0;
-  }
-  100% {
-    margin-top:20px;
-  }
-}
-@keyframes bounce-left{
-    0% {
-        margin-top:0;
-      }
-      100% {
-        margin-left:20px;
-      }
-}
-@-webkit-keyframes bounce {
-    0% {
-      margin-top:0;
-    }
-    100% {
-      margin-left:20px;
-    }
-  }
   .custom-control-label{
       p{
           margin-left: 10px;
@@ -436,10 +411,14 @@ select{
             left: -5px;
         }
     }
+    .navbar-nav li a{
+        @include borderLeft;
+    }
 }
 // Large screens
 @media only screen and (min-width: 64.063em) { 
     .navbar-nav li a{
+        @include borderLeft;
         font-size: 15px;
     }
     .navbar-expand-lg .navbar-nav .nav-link{

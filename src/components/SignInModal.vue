@@ -32,10 +32,16 @@
           </div>
           <div class="form-group">
              <div class="field" :class="{error: errors.has('Country')}">
-               <select class="custom-select" v-validate="'required'" name="Country" v-model="Country">
-                  <option selected="selected" value="">Choose Country</option>
-                  <option v-for="CountryItem in modalData.coutryList" v-bind:value="CountryItem.name">{{CountryItem.name}}</option>
-               </select>
+                <v-select  v-model="Country"
+                  v-validate="'required'" 
+                  data-vv-value-path="mutableValue" 
+                  data-vv-name="Country" 
+                  label="name" 
+                  :options="countryData"
+                  :has-error="errors.has('Country')"
+                  :class="{'error':errors.has('Country')}"
+                  placeholder="Choose Country"
+            ></v-select>
               </div>
           </div>
            <div class="form-group">
@@ -45,10 +51,16 @@
           </div>
           <div class="form-group">
              <div class="field" :class="{error: errors.has('jobRole')}">
-               <select class="custom-select" v-validate="'required'" name="jobRole" v-model="jobRole">
-                  <option selected="selected" value="">Choose Job Role</option>
-                  <option v-for="jobRole in modalData.jobRole" v-bind:value="jobRole.name">{{jobRole.name}}</option>
-               </select>
+                <v-select v-model="jobRole"
+                  v-validate="'required'" 
+                  data-vv-value-path="mutableValue" 
+                  data-vv-name="jobRole" 
+                  label="name" 
+                  :options="jobData"
+                  :has-error="errors.has('jobRole')"
+                  :class="{'error':errors.has('jobRole')}"
+                  placeholder="Choose Job Role"
+            ></v-select>
               </div>
           </div>
           <div class="">
@@ -87,7 +99,9 @@ import func from "./vue-temp/vue-editor-bridge";
             Company:'',
             Country:'',
             jobRole:'',
-            signed:''
+            signed:'',
+            jobData:'',
+            countryData:''
           }
         },
         methods:{
@@ -99,8 +113,8 @@ import func from "./vue-temp/vue-editor-bridge";
                     jq('.mktoForm  #LastName').val(this.LastName);
                     jq('.mktoForm  #Email').val(this.Email);
                     jq('.mktoForm  #Company').val(this.Company);
-                    jq('.mktoForm  #Country option[value="' + this.Country + '"]').attr("selected", "selected");
-                    jq('.mktoForm  #Title option[value="' + this.jobRole + '"]').attr("selected", "selected");
+                    jq('.mktoForm  #Country option[value="' + this.Country.name + '"]').attr("selected", "selected");
+                    jq('.mktoForm  #Title option[value="' + this.jobRole.name + '"]').attr("selected", "selected");
                     if(jq('#customControlInline:checked').length > 0){
                       jq('.mktoCheckboxList input').prop('checked', true)
                     }else{
@@ -130,6 +144,8 @@ import func from "./vue-temp/vue-editor-bridge";
         },
         beforeMount(){
           this.callMktoForms();
+          this.jobData = this.modalData.jobRole;
+          this.countryData = this.modalData.coutryList;
         }
     }
 </script>

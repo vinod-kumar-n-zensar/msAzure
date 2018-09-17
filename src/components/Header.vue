@@ -12,8 +12,8 @@
         <a class="nav-link"  v-bind:href="'#'+item.link" v-if="signed == 'true'" v-scroll-to="{el: '#'+item.link, offset: -66,duration: 500}">
           {{item.title}}
         </a>
-        <a class="nav-link"  @click="changeActive" v-bind:href="'#'+item.link" v-scroll-to="{el: '#'+item.link, offset: -66,duration: 500}" v-else>
-          <span v-if="item.title != 'Reimagine' && item.title != 'Leap'" class="grey" data-toggle="modal" data-target="#SignInModal">
+        <a class="nav-link"  @click="changeActive" v-bind:href="'#'+item.link" v-scroll-to="{el: '#'+item.link, offset: -66,duration: 500}" v-bind:data-toggle="[item.title != 'Reimagine' && item.title != 'Leap' ? 'modal' : '']" data-target="#SignInModal" v-else>
+          <span v-if="item.title != 'Reimagine' && item.title != 'Leap'" class="grey" >
            <font-awesome-icon size="xs" icon="lock" /> {{item.title}}<span class="sr-only">(current)</span>
           </span>
            <span v-else>

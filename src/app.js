@@ -10,11 +10,17 @@ import VeeValidate from 'vee-validate'
 import  VueScrollTo from 'vue-scrollto';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import VueMatchHeights from 'vue-match-heights';
+import vSelect from 'vue-select'
 
+Vue.use(VueMatchHeights, {
+   // Optional: default viewports widths to disabled resizing on. Can be overridden per usage
+});
 Vue.use(VueScrollTo)
 Vue.use(VeeValidate);
 library.add(faLock,faArrowRight, faArrowLeft)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('v-select', vSelect)
 new Vue({
   created(){
     AOS.init({

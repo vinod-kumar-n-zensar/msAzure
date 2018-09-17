@@ -35,21 +35,23 @@
                             <img  data-aos="zoom-in" v-bind:src="info.urlDual"  data-aos-anchor-placement="top-center"/>
                         </div>
                     </div>
-                    <div class="row common-card toggleVolume">
+                    <h2 class="commonGutSpaceTop">{{info.toggleVolume.headerInfo}}</h2>
+                    <div class="row common-card toggleVolume" v-match-heights="{el: ['.common-card-info']}">
+                        
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <h2 class="commonGutSpaceBtm">{{info.toggleVolume.headerInfo}}</h2>
-                            <div class="common-card-info card" v-bind:class="{ active: toggle }">
-                                <div v-show="toggle">
+                            
+                            <div class="common-card-info card cursor-pointer" v-on:click="toggle = !toggle"  v-bind:class="{ active: toggle }">
+                                <div v-show="toggle" class="true">
                                 <h3 class="blue">{{info.toggleVolume.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleVolume.toggleInfoSecondary.bodyText}}</p>
                                 </div>
-                                <div v-show="!toggle" >
+                                <div v-show="!toggle" class="false">
                                     <h3 class="blue">{{info.toggleVolume.toggleInfoPrimary.headerInfo}}</h3>
                                     <p><strong>{{info.toggleVolume.toggleInfoPrimary.title}}</strong></p>
                                     <p>{{info.toggleVolume.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleVolume.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="toggle = !toggle"><span v-show="toggle"><font-awesome-icon size="xs" icon="arrow-left" /> {{info.toggleVolume.toggleInfoSecondary.btnText}}</span><span v-show="!toggle">{{info.toggleVolume.toggleInfoPrimary.btnText}} <font-awesome-icon size="xs" icon="arrow-right" /></span></button>
+                            <button class="btn btn-primary btn-lg mt-auto" v-on:click.stop="toggle = !toggle"><span v-show="toggle"><font-awesome-icon size="xs" icon="arrow-left" /> {{info.toggleVolume.toggleInfoSecondary.btnText}}</span><span v-show="!toggle">{{info.toggleVolume.toggleInfoPrimary.btnText}} <font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-none d-lg-block" >
@@ -61,7 +63,7 @@
                              <img v-bind:src="info.toggleVelocity.url" />
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <div class="common-card-info card" v-bind:class="{ active: velocity }">
+                            <div class="common-card-info card cursor-pointer" v-on:click="velocity = !velocity" v-bind:class="{ active: velocity }">
                                 <div v-show="velocity">
                                 <h3 class="blue">{{info.toggleVelocity.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleVelocity.toggleInfoSecondary.bodyText}}</p>
@@ -72,13 +74,13 @@
                                     <p>{{info.toggleVelocity.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleVelocity.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="velocity = !velocity"><span v-show="velocity"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleVelocity.toggleInfoSecondary.btnText}}</span><span v-show="!velocity">{{info.toggleVelocity.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
+                            <button class="btn btn-primary btn-lg mt-auto" v-on:click.stop="velocity = !velocity"><span v-show="velocity"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleVelocity.toggleInfoSecondary.btnText}}</span><span v-show="!velocity">{{info.toggleVelocity.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                     </div>
                     <div class="row common-card toggleVariety common-mob-padd-fix">
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <div class="common-card-info card" v-bind:class="{ active: variety }">
+                            <div class="common-card-info card cursor-pointer" v-on:click="variety = !variety" v-bind:class="{ active: variety }">
                                 <div v-show="variety">
                                 <h3 class="blue">{{info.toggleVariety.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleVariety.toggleInfoSecondary.bodyText}}</p>
@@ -89,7 +91,7 @@
                                     <p>{{info.toggleVariety.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleVariety.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="variety = !variety"><span v-show="variety"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleVariety.toggleInfoSecondary.btnText}}</span><span v-show="!variety">{{info.toggleVariety.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
+                            <button class="btn btn-primary btn-lg mt-auto" v-on:click.stop="variety = !variety"><span v-show="variety"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleVariety.toggleInfoSecondary.btnText}}</span><span v-show="!variety">{{info.toggleVariety.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-none d-lg-block" >
@@ -101,7 +103,7 @@
                              <img v-bind:src="info.toggleDynamic.url" />
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <div class="common-card-info card" v-bind:class="{ active: dynamic }">
+                            <div class="common-card-info card cursor-pointer" v-on:click="dynamic = !dynamic" v-bind:class="{ active: dynamic }">
                                 <div v-show="dynamic">
                                 <h3 class="blue">{{info.toggleDynamic.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleDynamic.toggleInfoSecondary.bodyText}}</p>
@@ -112,13 +114,13 @@
                                     <p>{{info.toggleDynamic.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleDynamic.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="dynamic = !dynamic"><span v-show="dynamic"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleDynamic.toggleInfoSecondary.btnText}}</span><span v-show="!dynamic">{{info.toggleDynamic.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
+                            <button class="btn btn-primary btn-lg mt-auto" v-on:click.stop="dynamic = !dynamic"><span v-show="dynamic"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleDynamic.toggleInfoSecondary.btnText}}</span><span v-show="!dynamic">{{info.toggleDynamic.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                 </div>
                 <div class="row common-card toggleGlobal common-mob-padd-fix">
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <div class="common-card-info card" v-bind:class="{ active: global }">
+                            <div class="common-card-info card cursor-pointer" v-on:click="global = !global" v-bind:class="{ active: global }">
                                 <div v-show="global">
                                 <h3 class="blue">{{info.toggleGlobal.toggleInfoSecondary.headerInfo}}</h3>
                                     <p>{{info.toggleGlobal.toggleInfoSecondary.bodyText}}</p>
@@ -129,7 +131,7 @@
                                     <p>{{info.toggleGlobal.toggleInfoPrimary.bodyText}}</p>
                                     <p>{{info.toggleGlobal.toggleInfoPrimary.extraInfo}}</p>
                                 </div>
-                            <button class="btn btn-primary btn-lg" v-on:click="global = !global"><span v-show="global"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleGlobal.toggleInfoSecondary.btnText}}</span><span v-show="!global">{{info.toggleGlobal.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
+                            <button class="btn btn-primary btn-lg mt-auto" v-on:click.stop="global = !global"><span v-show="global"><font-awesome-icon size="xs" icon="arrow-left" />{{info.toggleGlobal.toggleInfoSecondary.btnText}}</span><span v-show="!global">{{info.toggleGlobal.toggleInfoPrimary.btnText}}<font-awesome-icon size="xs" icon="arrow-right" /></span></button>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer d-none d-md-none d-lg-block" >
