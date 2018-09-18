@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title text-center">{{modalData.headerInfo}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bi-bhvr="close modal" data-bi-dlnm="close the signup modal"  data-bi-dltype="close link">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -71,8 +71,8 @@
         </div> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" :disabled="errors.any()" ref="btnSubmit" class="btn btn-primary">Get Started</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"  data-bi-bhvr="close modal" data-bi-dlnm="close the signup modal"  data-bi-dltype="close link">Close</button>
+        <button type="submit" :disabled="errors.any()" ref="btnSubmit" class="btn btn-primary"  data-bi-bhvr="submit modal form" data-bi-dlnm="subit data from signup modal"  data-bi-dltype="submit link">Get Started</button>
       </div>
       </form>
       <form id="mktoForm_14282"></form>
@@ -136,7 +136,6 @@ import func from "./vue-temp/vue-editor-bridge";
                         document.cookie = "signedIn = true";
                         jq('#SignInModal').modal('hide');
                         that.$emit('update:signed','true'); 
-
                         return false;
                       });
                     })

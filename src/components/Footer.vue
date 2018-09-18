@@ -6,7 +6,7 @@
                         <div class="text-center">
                             <h1>{{info.NoSign.head}}</h1>
                             <p>{{info.NoSign.info}}</p>
-                            <button type="button" data-toggle="modal" data-target="#SignInModal"  class="btn btnNosign btn-lg"><font-awesome-icon size="xs" icon="lock" /> {{info.NoSign.ButtonText}}</button>
+                            <button type="button" data-toggle="modal" data-bi-bhvr="SignUp Modal" data-bi-dlnm="navigate to SignUp Modal" data-bi-dltype="modal" data-target="#SignInModal"  class="btn btnNosign btn-lg"><font-awesome-icon size="xs" icon="lock" /> {{info.NoSign.ButtonText}}</button>
                         </div>
                     </div> 
                 </div>
@@ -30,7 +30,7 @@
                         <div class="row align-items-center h-100">
                             <div class="col db-link-box">
                                 <div class="text-center">
-                                    <div class="link-box col-lg-6 cursor-pointer" @click="redirectPage(info.signed.BtnText.url)">
+                                    <div class="link-box col-lg-6 cursor-pointer" @click="redirectPage(info.signed.BtnText.url)" data-bi-bhvr="AzureCosmosDB" data-bi-dlnm="navigate to cosmos DB Page" data-bi-dltype="cosmos db">
                                         <h1 class="blue">{{info.signed.BtnText.head}}</h1>
                                         <h3 class="blue">{{info.signed.BtnText.footer}}</h3>
                                     </div>

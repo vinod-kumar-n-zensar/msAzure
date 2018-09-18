@@ -27,7 +27,7 @@
             </div> 
         </div>
         <div class="container-fluid common-div common-card-padd">
-                <div class="container border-bottom-black common-card-padd">
+                <div class="container border-bottom-black">
                     <div class="row commonGutSpaceBtm">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{meetInfo.textPrimary}}</p></div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

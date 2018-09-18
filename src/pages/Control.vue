@@ -43,10 +43,10 @@
                     <div class="tabView">
                         <ul class="nav nav-tabs" id="controlTab" role="tablist">
                             <li class="nav-item col-lg-4 text-center">
-                                <a class="nav-link active" id="sdc-tab" data-toggle="tab" href="#sdc" role="tab" aria-controls="sdc" aria-selected="true">{{controlInfo.tabData.tabOne.head}}</a>
+                                <a class="nav-link active" id="sdc-tab" data-toggle="tab" href="#sdc" role="tab" aria-controls="sdc" aria-selected="true" data-bi-bhvr="sdc Tab" data-bi-dlnm="toggle Strong Data Consistency"  data-bi-dltype="btn">{{controlInfo.tabData.tabOne.head}}</a>
                             </li>
                             <li class="nav-item col-lg-4 text-center">
-                                <a class="nav-link" id="edc-tab" data-toggle="tab" href="#edc" role="tab" aria-controls="edc" aria-selected="false">{{controlInfo.tabData.tabTwo.head}}</a>
+                                <a class="nav-link" id="edc-tab" data-toggle="tab" href="#edc" role="tab" aria-controls="edc" aria-selected="false" data-bi-bhvr="edc Tab" data-bi-dlnm="toggle Eventual Data Consistency"  data-bi-dltype="btn">{{controlInfo.tabData.tabTwo.head}}</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="controlTabContent">

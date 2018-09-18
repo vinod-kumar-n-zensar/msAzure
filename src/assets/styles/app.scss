@@ -25,6 +25,18 @@ body{
     h1{
         line-height: 1.5
     }
+    h3{
+        color: $white;
+    }
+    #color-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $overlayColor;
+        opacity: 0.6;
+     }
 }
 .font-secondary-color{
     color: $white;
@@ -425,9 +437,20 @@ footer{
     .navbar-nav li a{
         @include borderLeft;
     }
+    .banner{
+        h3{
+            color: $fontColor;
+        }
+    }
+    
 }
 // Large screens
 @media only screen and (min-width: 64.063em) { 
+    .banner{
+        h3{
+            color: $fontColor;
+        }
+    }
     .navbar-nav li a{
         @include borderLeft;
         font-size: 15px;

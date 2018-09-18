@@ -46,9 +46,9 @@
     :windowHeight.sync="windowHeight"
     ></ms-footer>
   </div>
-  <div v-else-if="data == undefined">
+  <div v-else>
     <div class="jumbotron">
-        <h1 class="display-4"></h1>
+        <h1 class="display-4">Loading ...</h1>
     </div>
   </div>
 </template>

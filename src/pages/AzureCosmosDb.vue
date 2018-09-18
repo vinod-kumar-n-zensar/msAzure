@@ -47,7 +47,9 @@
                         </div>
                         <ul class="nav nav-pills mb-3 nav-fill commonGutSpaceTop commonGutSpaceBtm" id="pills-tab" role="tablist">
                         <li class="nav-item" v-for="(items,index) in cosmosInfo.appData.navData">
-                            <a class="nav-link " :class="{ 'active': index === 0 }" v-bind:id="'pills-'+items.content.link+'-tab'" data-toggle="pill" v-bind:href="'#pills-'+items.content.link" role="tab" aria-controls="strong-home" aria-selected="true"><strong>{{items.content.title}}</strong></a>
+                            <a class="nav-link " :class="{ 'active': index === 0 }" v-bind:id="'pills-'+items.content.link+'-tab'" data-toggle="pill" v-bind:href="'#pills-'+items.content.link" role="tab" aria-controls="strong-home" aria-selected="true"
+                            v-bind:data-bi-bhvr="items.content.title+ ' Tab'" v-bind:data-bi-dlnm="'toggle to ' +items.content.title" data-bi-dltype="link"
+                            ><strong>{{items.content.title}}</strong></a>
                         </li>
                     </ul>
                     <div class="tab-content commonGutSpaceTop commonGutSpaceBtm" id="pills-tabContent">

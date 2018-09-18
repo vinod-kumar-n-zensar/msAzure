@@ -147,7 +147,7 @@
                 "btnText":"Click for solution"
             },
             "toggleInfoSecondary":{
-                "title":"{replicate globally}",
+                "title":"replicate globally",
                 "headerInfo":"Clone cats across the world.",
                 "bodyText":"Make exact copies of sharded databases and put them around the world where local users can access them. In your cat business, this one is also a little bizarre but potentially useful: you would launch a global franchise that clones the cats so they can be dropped off anywhere and picked up anywhere else in the world. In a database, we make replicated copies available in multiple regions around the world that anyone can read and write to, and we continuously sync the data sets so they are as consistent as possible, given the limitation of the speed of light.",
                 "btnText":"Click for scenario"
