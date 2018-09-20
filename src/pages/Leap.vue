@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <h2 class="">{{info.toggleVolume.headerInfo}}</h2>
-                    <div class="row common-card toggleVolume" v-match-heights="{el: ['.common-card-info']}">
+                    <div class="row common-card toggleVolume">
                         
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             
@@ -168,6 +168,7 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     export default{
         props:{
             info: Object,
@@ -187,5 +188,27 @@
             return 'backgroundImage: url( "' + this.info.url + '")';
             }
         },
+        methods:{
+            getmaxHeight(){
+                    $('.leap .common-card').each(function(){
+                        let maxHeight = 0;
+                     $(".common-card-info div").each(function ()
+                        {
+                            if ($(this).height() > maxHeight) 
+                            { 
+                                let maxHeight = $(this).height();
+                                $(this).closest('.common-card-info').height(maxHeight+50)
+                            }
+                        })
+                    })
+            }
+        },
+        mounted(){
+            this.getmaxHeight();
+            window.addEventListener('resize', () => {
+                    this.getmaxHeight();
+                });
+            
+        }
     }
 </script>

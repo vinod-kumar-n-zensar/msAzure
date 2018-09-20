@@ -2,6 +2,7 @@
 const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+//const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   mode: 'development',
   
@@ -22,7 +23,7 @@ module.exports = {
       },
        {
         test: /\.(css|scss)?$/,
-        use: [ 'vue-style-loader', 'css-loader','sass-loader' ]
+        use: [ 'vue-style-loader', 'css-loader?-minimize','sass-loader' ]
       },
       {
         test: /\.js$/,
@@ -37,6 +38,9 @@ module.exports = {
       }
     ]
   },
+  /*optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },*/
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
@@ -44,6 +48,9 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    })
+    }),
+    /*new UglifyJsPlugin({
+      test: /\.js(\?.*)?$/i
+    })*/
   ]
 }
