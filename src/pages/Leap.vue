@@ -190,14 +190,21 @@
         },
         methods:{
             getmaxHeight(){
+                 let screenWidth = window.innerWidth;
                     $('.leap .common-card').each(function(){
                         let maxHeight = 0;
+                       
                      $(".common-card-info div").each(function ()
                         {
                             if ($(this).height() > maxHeight) 
                             { 
                                 let maxHeight = $(this).height();
-                                $(this).closest('.common-card-info').height(maxHeight+50)
+                                if(screenWidth < 768){
+                                    $(this).closest('.common-card-info').height(maxHeight+130)
+                                } else{
+                                    $(this).closest('.common-card-info').height(maxHeight+100)
+                                }
+                                
                             }
                         })
                     })
