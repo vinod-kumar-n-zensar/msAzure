@@ -68,13 +68,13 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="border-top-black common-div imageContainer commonGutSpaceBtm commonGutSpaceTop">
+                                <img v-bind:src="items.content.content.url" alt="">
+                            </div>
                         </div>
                     </div>
                     </div>
-                    <div class="border-bottom-black common-div imageContainer commonGutSpaceBtm">
-                        <img v-bind:src="cosmosInfo.appData.footer.url" alt="">
-                    </div>
-                    <div class="row paddTop">
+                    <div class="row paddTop commonGutSpaceTop">
                         <div class="col-lg-3 col-xs-12 col-sm-12 col-md-4">
                             <div class="row">
                                 <div v-for="range in cosmosInfo.appData.footer.range" class="col-lg-6 col-xs-6 col-sm-6 rangeContainer">

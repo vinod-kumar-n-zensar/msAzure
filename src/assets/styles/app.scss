@@ -78,6 +78,9 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 .border-bottom-black{
     border-bottom: 1px solid $fontColor;
 }
+.border-top-black{
+    border-top: 1px solid $fontColor;
+}
 .banner h3, #SignInModal h3{
     @include font-weight(normal)
 }

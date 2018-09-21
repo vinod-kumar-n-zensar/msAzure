@@ -190,7 +190,6 @@
         },
         methods:{
             getmaxHeight(){
-                 let screenWidth = window.innerWidth;
                     $('.leap .common-card').each(function(){
                         let maxHeight = 0;
                        
@@ -199,7 +198,7 @@
                             if ($(this).height() > maxHeight) 
                             { 
                                 let maxHeight = $(this).height();
-                                if(screenWidth < 768){
+                                if(window.innerWidth < 768){
                                     $(this).closest('.common-card-info').height(maxHeight+130)
                                 } else{
                                     $(this).closest('.common-card-info').height(maxHeight+100)

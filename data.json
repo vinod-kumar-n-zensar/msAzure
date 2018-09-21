@@ -245,7 +245,8 @@
                                             "title":"<strong>Reservation systems</strong>",
                                             "content":"must show correct availability when customers finalize their booking."
                                         }
-                                    ]
+                                    ],
+                                    "url":"./src/assets/images/chapter6_slide1_image.jpg"
                                 }
                             }
                          },
@@ -266,7 +267,8 @@
                                             "title":"<strong>Package tracking apps</strong>",
                                             "content":"for a shipping company need to provide chronologically ordered records and checkpoints that show where and when a package was received."
                                         }
-                                    ]
+                                    ],
+                                    "url":"./src/assets/images/chapter6_slide2_image.jpg"
                                 }
                             }
                          },
@@ -292,7 +294,8 @@
                                             "title":"<strong>Social music apps</strong>",
                                             "content":" such as Spotify need to be consistent with users’ playlists preferences as they are building them, but the preferences don’t have to show up right away for everyone else who is “following.”"
                                         }
-                                    ]
+                                    ],
+                                    "url":"./src/assets/images/chapter6_slide3_image.jpg"
                                 }
                             }
                          },
@@ -313,7 +316,8 @@
                                             "title":"<strong>Social media comments</strong>",
                                             "content":" must be ordered to preserve the back-and-forth nature of dialogue and make sense to people reading them, but the reads do not need to be fully up to date. As a result, the cost of read operations (in terms of system resources) are lower than session, bounded-staleness and strong. "
                                         }
-                                    ]
+                                    ],
+                                    "url":"./src/assets/images/chapter6_slide4_image.jpg"
                                 }
                             }
                          },
@@ -338,13 +342,14 @@
                                             "title":"<strong>Transaction receipts</strong>",
                                             "content":" don’t necessarily need to be available immediately after purchase, as long as they show up within a reasonable window of time."
                                         }
-                                    ]
+                                    ],
+                                    "url":"./src/assets/images/chapter6_slide5_image.jpg"
                                 }
                             }
                          }
                     ],
                     "footer":{
-                        "url":"./src/assets/images/chapter6_slide1_image.jpg",
+                        
                         "range":[
                             {
                                 "info":"Higher"
