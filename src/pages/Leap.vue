@@ -123,6 +123,7 @@
                             </div>
                         </div>
                 </div>
+                <div id="slider"></div>
                 <div class="row common-card toggleGlobal common-mob-padd-fix">
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <div class="common-card-info card cursor-pointer" v-on:click="global = !global" v-bind:class="{ active: global }">
@@ -145,12 +146,6 @@
                         </div>
                 </div>
             </div>
-            </div>
-        </div>
-        <div class="container common-div" v-else>
-            <div class="row flexthis">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{info.textPrimary}}</p></div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><p>{{info.textSecondary}}</p></div>
             </div>
         </div>
     </div> 
@@ -216,7 +211,7 @@
             window.addEventListener('resize', () => {
                     this.getmaxHeight();
                 });
-            
+            $( "#slider" ).slider();
         }
     }
 </script>
