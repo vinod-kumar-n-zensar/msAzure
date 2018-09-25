@@ -12,12 +12,12 @@
       <div class="modal-body">
           <div class="form-group">
              <div class="field" :class="{error: errors.has('FirstName')}">
-                <input class="form-control" v-validate="'required|alpha'" name="FirstName" type="text" placeholder="First Name" v-model="FirstName">
+                <input class="form-control" v-validate="'required|alpha_spaces'" name="FirstName" type="text" placeholder="First Name" v-model="FirstName">
               </div>
           </div>
           <div class="form-group">
              <div class="field" :class="{error: errors.has('LastName')}">
-                <input class="form-control" v-validate="'required|alpha'" name="LastName" type="text" placeholder="Last Name" v-model="LastName">
+                <input class="form-control" v-validate="'required|alpha_spaces'" name="LastName" type="text" placeholder="Last Name" v-model="LastName">
               </div>
           </div>
           <div class="form-group">
@@ -46,7 +46,7 @@
           </div>
            <div class="form-group">
              <div class="field" :class="{error: errors.has('Company')}">
-                <input class="form-control" v-validate="'required|alpha'" name="Company" type="text" placeholder="Company" v-model="Company">
+                <input class="form-control" v-validate="'required|alpha_spaces'" name="Company" type="text" placeholder="Company" v-model="Company">
               </div>
           </div>
           <div class="form-group">
@@ -71,8 +71,7 @@
         </div> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"  data-bi-bhvr="close modal" data-bi-dlnm="close the signup modal"  data-bi-dltype="close link">Close</button>
-        <button type="submit" :disabled="errors.any()" ref="btnSubmit" class="btn btn-primary"  data-bi-bhvr="submit modal form" data-bi-dlnm="subit data from signup modal"  data-bi-dltype="submit link">Get Started</button>
+        <button type="submit" :disabled="errors.any()" ref="btnSubmit" class="btn btn-primary mx-auto btn-lg"  data-bi-bhvr="submit modal form" data-bi-dlnm="subit data from signup modal"  data-bi-dltype="submit link">Get Started</button>
       </div>
       </form>
       <form id="mktoForm_14282"></form>

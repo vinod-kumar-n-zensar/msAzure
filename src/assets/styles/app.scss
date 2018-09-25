@@ -15,7 +15,9 @@ body{
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
     color: $bgColorPrimary;
 }
-
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus{
+    border-color: transparent;
+}
 .common-banner-fix{
     background-repeat: no-repeat;
     height:100%;
@@ -35,7 +37,7 @@ body{
         width: 100%;
         height: 100%;
         background-color: $overlayColor;
-        opacity: 0.6;
+        opacity:0.75;
      }
 }
 .font-secondary-color{
@@ -51,13 +53,18 @@ body{
 .common-page-subhead{
     background:$page-sub-head-color;
 }
-.common-div{
-    @include my-padding-mixin(50px 0)
+.common-padd-btm{
+    @include my-padding-mixin(0 0 100px 0)
 }
 .common-footer-color{
     background:$footer-bg-color;
     color: $white;
     @include my-padding-mixin(80px 0)
+}
+footer{
+    .common-page-head{
+        @include my-padding-mixin(80px 0)
+    }
 }
 .svg-inline--fa{
     vertical-align: baseline
@@ -111,6 +118,8 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 }
 .common-card-info{
     background: $card-bg-color;
+    border-radius: 0;
+    border: 0;
 }
 .imageContainer img{
     width: 100%;
@@ -140,6 +149,47 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 .tabView .tab-content div{
     @include my-padding-mixin(20px 0)
 } 
+.modal-body {
+    .form-control, .dropdown-toggle{
+        width: 98%;
+        border-radius: 0;
+    }
+    .field{
+        position: relative;
+    }
+    .field::before{
+        content: "*";
+        display: block;
+        position: absolute;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        font-family: Arial, Helvetica, sans-serif;
+        right: -6px;
+        top: 4px;
+        bottom: 0;
+        margin: auto 0;
+        z-index: 1;
+        line-height: normal;
+        font-size: 2em;
+        padding-top: 8px;
+        color: rgba(0, 0, 0, 0.3);
+    }
+    .v-select .vs__actions,.v-select .dropdown-toggle{
+        @include my-padding-mixin(0 5px 0 0);
+        border-radius:0;
+    }
+    .v-select input[type=search], .v-select input[type=search]:focus{
+        margin: 0;
+    }
+}
+.modal-footer{
+    .btn-primary{
+        border-radius: 0;
+    }
+}
 // Tab Style Starts
 #pills-tab li a{
     padding: 10px;
@@ -197,6 +247,7 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
             background-color:$bgColorPrimary;
             color: $white;
             border: 1px solid $bgColorPrimary;
+            border-radius: 0;
         }
         .nav-link{
             color: $fontColor;
@@ -278,13 +329,16 @@ footer{
       display: none;
   }
   .commonGutSpaceBtm{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   .commonGutSpaceTop{
-    margin-top: 30px;
+    margin-top: 50px;
   }
   .paddTop{
       padding-top: 30px;
+  }
+  .common-page-head.common-border-bottom{
+      @include my-padding-mixin(100px 0);
   }
   .common-page-head, .common-page-subhead{
     @include my-padding-mixin(50px 0)
@@ -300,16 +354,17 @@ footer{
         color: $bgColorPrimary;
         font-size: 21px;
         border: 2px solid $bgColorPrimary;
+        border-radius: 0;
     }
-.fa-arrow-right{
+.fa-chevron-right{
     position: absolute;
     right: 14px;
-    top: 18px;
+    top: 16px;
   }
-  .fa-arrow-left{
+  .fa-chevron-left{
     position: absolute;
     left: 14px;
-    top: 16px;
+    top: 14px;
   }
 }
   .custom-control-label{
@@ -394,6 +449,32 @@ footer{
             background-position: center;
         }
     }
+    .common-div{
+        @include my-padding-mixin(20px 0)
+    }
+    #leap{
+        .btn-primary{
+            width:70%;
+            font-size: 16.5px;
+            .fa-chevron-right{
+                right: 11px;
+                top: 14px;
+            }
+            .fa-chevron-left{
+                left: 9px;
+                top: 13px;
+            }
+        }
+    }
+    .common-padd-btm{
+        @include my-padding-mixin(0 0 50px 0)
+    }
+    .common-page-head.common-border-bottom, footer .common-page-head{
+        @include my-padding-mixin(20px 0)
+    }
+    .custom-control-label::before, .custom-control-label::after{
+        top: 19px;
+    }
  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 // Medium screens
@@ -403,6 +484,24 @@ footer{
         bottom: 4px;
         left: -5px;
         width: 100%;
+    }
+    .common-padd-btm{
+        @include my-padding-mixin(0 0 100px 0)
+    }
+    .common-page-head.common-border-bottom, footer .common-page-head{
+        @include my-padding-mixin(50px 0)
+    }
+    .common-div{
+        @include my-padding-mixin(100px 0)
+    }
+    #leap{
+        .btn-primary{
+            width: 40%;
+            .fa-chevron-right{
+                right: 14px;
+                top: 15px;
+            }
+        }
     }
  } /* min-width 641px, medium screens */
 
@@ -487,7 +586,7 @@ footer{
     }
     .absContainer img{
         position: absolute;
-        bottom: -47px;
+        bottom: -57px;
     }
     .common-page-img-fix .common-page-subhead .imageContainer img{
         position: absolute;
@@ -497,7 +596,7 @@ footer{
         @include my-padding-mixin(50px 0 100px 0)
     }
     .common-card-padd{
-        @include my-padding-mixin(50px 0)
+        @include my-padding-mixin(100px 0)
     }
     footer{
         .common-page-head{

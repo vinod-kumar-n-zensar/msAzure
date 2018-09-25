@@ -30,7 +30,7 @@
                         <div class="row align-items-center h-100">
                             <div class="col db-link-box">
                                 <div class="text-center">
-                                    <div class="link-box col-lg-6 cursor-pointer" @click="redirectPage(info.signed.BtnText.url)" data-bi-bhvr="AzureCosmosDB" data-bi-dlnm="navigate to cosmos DB Page" data-bi-dltype="cosmos db">
+                                    <div class="link-box col-lg-5 col-md-6 text-left cursor-pointer" @click="redirectPage(info.signed.BtnText.url)" data-bi-bhvr="AzureCosmosDB" data-bi-dlnm="navigate to cosmos DB Page" data-bi-dltype="cosmos db">
                                         <h1 class="blue">{{info.signed.BtnText.head}}</h1>
                                         <h3 class="blue">{{info.signed.BtnText.footer}}</h3>
                                     </div>

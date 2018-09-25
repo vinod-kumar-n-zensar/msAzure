@@ -45,14 +45,14 @@
                             <h3 class="blue">{{cosmosInfo.appData.title}}</h3>
                             <p>{{cosmosInfo.appData.content}}</p>
                         </div>
-                        <ul class="nav nav-pills mb-3 nav-fill commonGutSpaceTop commonGutSpaceBtm" id="pills-tab" role="tablist">
+                        <ul class="nav nav-pills nav-fill commonGutSpaceTop commonGutSpaceBtm" id="pills-tab" role="tablist">
                         <li class="nav-item" v-for="(items,index) in cosmosInfo.appData.navData">
                             <a class="nav-link " :class="{ 'active': index === 0 }" v-bind:id="'pills-'+items.content.link+'-tab'" data-toggle="pill" v-bind:href="'#pills-'+items.content.link" role="tab" aria-controls="strong-home" aria-selected="true"
                             v-bind:data-bi-bhvr="items.content.title+ ' Tab'" v-bind:data-bi-dlnm="'toggle to ' +items.content.title" data-bi-dltype="link"
                             ><strong>{{items.content.title}}</strong></a>
                         </li>
                     </ul>
-                    <div class="tab-content commonGutSpaceTop commonGutSpaceBtm" id="pills-tabContent">
+                    <div class="tab-content commonGutSpaceTop" id="pills-tabContent">
                         <div v-for="(items,index) in cosmosInfo.appData.navData" class="tab-pane fade" v-bind:id="'pills-'+items.content.link" role="tabpanel" aria-labelledby="pills-strong-tab" :class="{ 'active show': index === 0 }">
                             <div class="row">
                                 <div class="col-lg-3  col-xs-12 col-sm-12 text-center">
@@ -68,7 +68,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="border-top-black common-div imageContainer commonGutSpaceBtm commonGutSpaceTop">
+                            <div class="border-top-black common-div imageContainer commonGutSpaceTop">
                                 <img v-bind:src="items.content.content.url" alt="">
                             </div>
                         </div>
