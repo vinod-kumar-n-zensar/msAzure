@@ -598,6 +598,11 @@ footer{
     .common-card-padd{
         @include my-padding-mixin(100px 0)
     }
+    #leap{
+        .btn-primary{
+            width: 50%;
+        }
+    }
     footer{
         .common-page-head{
             h2{
