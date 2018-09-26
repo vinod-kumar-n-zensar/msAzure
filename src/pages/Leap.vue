@@ -32,7 +32,7 @@
                             <p class="blue">{{info.bodyText.petRoom}}</p>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageContainer h-100" :style=style>
-                            <img  data-aos="zoom-in" v-bind:src="info.urlDual"  data-aos-anchor-placement="top-center"/>
+                            <img  data-aos="fade-in" v-bind:src="info.urlDual"  data-aos-anchor-placement="top-center"/>
                         </div>
                     </div>
                     <div class="common-padd-btm">
