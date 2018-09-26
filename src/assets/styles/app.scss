@@ -112,6 +112,9 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 .blue{
     color:$bgColorPrimary;
 }
+.navbar-light .navbar-nav li:last-child a{
+    color: $bgColorPrimary !important;
+}
 #leap .imageContainer{
     background-size: contain;
     background-position: center;

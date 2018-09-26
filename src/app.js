@@ -10,8 +10,11 @@ import VeeValidate from 'vee-validate'
 import  VueScrollTo from 'vue-scrollto';
 import AOS from 'aos';
 import "aos/dist/aos.css";
-import vSelect from 'vue-select'
+import vSelect from 'vue-select';
+import VueMatchHeights from 'vue-match-heights';
 
+Vue.use(VueMatchHeights, {
+});
 Vue.use(VueScrollTo)
 Vue.use(VeeValidate);
 library.add(faLock,faChevronRight, faChevronLeft)

@@ -39,7 +39,7 @@
                     <h2 class="">{{info.toggleVolume.headerInfo}}</h2>
                     <div class="row common-card toggleVolume">
                         
-                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" v-match-heights="{el: ['.common-card-info'],}">
                             
                             <div class="common-card-info card cursor-pointer" v-on:click="toggle = !toggle"  v-bind:class="{ active: toggle }">
                                 <div v-show="toggle">
@@ -185,32 +185,5 @@
             return 'backgroundImage: url( "' + this.info.url + '")';
             }
         },
-        methods:{
-            getmaxHeight(){
-                    $('.leap .common-card').each(function(){
-                        let maxHeight = 0;
-                       
-                     $(".common-card-info div").each(function ()
-                        {
-                            if ($(this).height() > maxHeight) 
-                            { 
-                                let maxHeight = $(this).height();
-                                if(window.innerWidth < 768){
-                                    $(this).closest('.common-card-info').height(maxHeight+130)
-                                } else{
-                                    $(this).closest('.common-card-info').height(maxHeight+100)
-                                }
-                                
-                            }
-                        })
-                    })
-            }
-        },
-        mounted(){
-            this.getmaxHeight();
-            window.addEventListener('resize', () => {
-                    this.getmaxHeight();
-                });
-        }
     }
 </script>
