@@ -23,6 +23,10 @@ body{
     height:100%;
     background-size:cover 
 }
+// Slider 
+.vue-slider-component .vue-slider-process{
+    background: transparent;
+}
 .banner{
     h1{
         line-height: 1.5
@@ -149,6 +153,19 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 .tabView .tab-content div{
     @include my-padding-mixin(20px 0)
 } 
+.vue-slider-component .vue-slider-piecewise{
+    top: -80px;
+}
+.vue-slider-piecewise-item.active .vue-slider-piecewise-label{
+    color: $bgColorPrimary;
+}
+span.vue-slider-piecewise-label{
+    font-size: 16.5px !important;
+    font-weight: 500;
+    .fa-chevron-right{
+        vertical-align: sub;
+    }
+}
 .modal-body {
     .form-control, .dropdown-toggle{
         width: 98%;
@@ -204,40 +221,13 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 }
 #pills-tab li a:hover,
 #pills-tab li a.active, { border: none; color: $bgColorPrimary; }
-#pills-tab li a:before{
-    content: "";
-    width: 100%;
-    height: 4px;
-    background: $card-bg-color;
-    border: 1px solid $card-bg-color;
-    border-radius: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.vue-slider-component .vue-slider-dot{
+    background: $imageurl;
+    background-size: contain;
+    border-radius: 0;
+    box-shadow: unset;
 }
-#pills-tab li a:after{
-    content: "";
-    width: 0;
-    height: 4px;
-    background: $bgColorPrimary;
-    border: 1px solid $bgColorPrimary;
-    border-radius: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 1;
-    transition: all 1s ease 0s;
-}
-#pills-tab li:hover a:after,
-#pills-tab li.active a:after{
-    width: 100%;
-    opacity: 1;
-}
-#pills-tab li a.active:before{
-    background: $bgColorPrimary;
-    border: 1px solid $bgColorPrimary;
-}
+
  .tabView{
      #controlTab.nav-tabs{
         .nav-item{
@@ -547,7 +537,34 @@ footer{
     
 }
 // Large screens
-@media only screen and (min-width: 64.063em) { 
+@media only screen and (min-width: 64.063em) {
+    .prefixTitle{
+        padding-bottom: 100px;
+    }
+    #pills-tab li{
+        a strong{
+            position: relative;
+        }
+        a .fa-chevron-right{
+            position: absolute;
+            top: 6px;
+            right: -13px;
+        }
+    }
+    #pills-tab li:first-child a{
+        text-align: left; 
+        strong{
+            position: relative;
+            left: 10px;
+        }
+    } 
+    #pills-tab li:last-child a{
+        text-align: right;
+        strong{
+            position: relative;
+            left: 13px;
+        }
+    } 
     .banner{
         h3{
             color: $fontColor;

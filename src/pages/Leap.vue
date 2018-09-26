@@ -211,7 +211,6 @@
             window.addEventListener('resize', () => {
                     this.getmaxHeight();
                 });
-            $( "#slider" ).slider();
         }
     }
 </script>

@@ -23,8 +23,12 @@ module.exports = {
       },
        {
         test: /\.(css|scss)?$/,
-        use: [ 'vue-style-loader', 'css-loader?-minimize','sass-loader' ]
+        use: [ 'vue-style-loader', 'css-loader?-minimize','sass-loader?sourceMap' ]
       },
+      { 
+        test: /\.jpg|png$/, 
+        loader: "file-loader" 
+    },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
