@@ -2,7 +2,25 @@
 body{
     color: $fontColor;
 }
-
+.modal-body{
+    .form-group input{
+        z-index: 9999;
+    }
+}
+// wordpress Styles Starts
+.entry-footer, .entry-header{
+    display: none !important;
+}
+.site-footer, .hentry{
+    margin: 0 !important;
+}
+.custom-control-label a{
+    color: $bgColorPrimary;
+    p{
+        line-height: 1.25rem;
+    }
+}
+// wordpress Styles St
 // Nav Bar
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link{
     color: $fontColor;
@@ -18,14 +36,31 @@ body{
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus{
     border-color: transparent;
 }
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .btn:focus, .btn.focus {
+    box-shadow: none !important;
+}
 .common-banner-fix{
     background-repeat: no-repeat;
     height:100%;
-    background-size:cover 
+    background-size:cover;
+}
+#dbcosmos.common-banner-fix{
+        background-position: 50%;
 }
 // Slider 
 .vue-slider-component .vue-slider-process{
     background: transparent;
+}
+.sliderBox{
+    border-radius: 15px;
+    background-color: #ccc;
+}
+.vue-slider-piecewise-item {
+    width: auto !important;
+}
+.vue-slider-component .vue-slider {
+    border-radius: 0;
+    background-color: transparent;
 }
 .banner{
     h1{
@@ -60,10 +95,16 @@ body{
 .common-padd-btm{
     @include my-padding-mixin(0 0 100px 0)
 }
+.common-card-info p strong {
+    text-transform: lowercase;
+}
 .common-footer-color{
     background:$footer-bg-color;
     color: $white;
     @include my-padding-mixin(80px 0)
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .btn:focus, .btn.focus {
+    box-shadow: none !important;
 }
 footer{
     .common-page-head{
@@ -163,8 +204,8 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
     color: $bgColorPrimary;
 }
 span.vue-slider-piecewise-label{
-    font-size: 16.5px !important;
-    font-weight: 500;
+    font-size: 14.5px !important;
+    font-weight: 700;
     .fa-chevron-right{
         vertical-align: sub;
     }
@@ -349,15 +390,27 @@ footer{
         border: 2px solid $bgColorPrimary;
         border-radius: 0;
     }
-.fa-chevron-right{
-    position: absolute;
-    right: 14px;
-    top: 16px;
-  }
-  .fa-chevron-left{
-    position: absolute;
-    left: 14px;
-    top: 14px;
+    .btn-primary:hover{
+        background: $bgColorPrimary;
+        color: $white;
+        border-color: $bgColorPrimary;
+    }
+    .btn svg{
+        margin-left: 15px;
+    }
+    .common-card-info.card.active {
+        .btn-primary:hover{
+            background: $white;
+            color: $bgColorPrimary;
+            border-color: $white;
+        }
+        .btn svg{
+            margin-right: 15px;
+        }
+    }
+.fa-chevron-right, .fa-chevron-left{
+    vertical-align: middle;
+
   }
 }
   .custom-control-label{
@@ -368,7 +421,7 @@ footer{
   .custom-control-label::before, .custom-control-label::after{
     width: 1.5rem;
     height: 1.5rem;
-    top: 31px;
+    top: 53px;
     border: 2px solid $faded-color;
     border-radius: 0;
     background: none;
@@ -378,8 +431,9 @@ footer{
   }
   .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after{
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 8 8'%3E%3Cpath fill='"+$bgColorPrimary+"' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
-    background-size: 82% 78%;
+    background-size: 67% 77%;
     background-repeat: no-repeat;
+    background-position: 36% 30%;
   }
 // Small screens
 @media only screen { 
@@ -389,6 +443,9 @@ footer{
     }
 } /* Define mobile styles */
 @media only screen and (max-width: 40em) {
+    .navbar-brand{
+        width: 40%;
+    }
     // Common font size 
     h3 {
         font-size: 16.8px;
@@ -449,14 +506,6 @@ footer{
         .btn-primary{
             width:70%;
             font-size: 16.5px;
-            .fa-chevron-right{
-                right: 11px;
-                top: 14px;
-            }
-            .fa-chevron-left{
-                left: 9px;
-                top: 13px;
-            }
         }
     }
     .common-padd-btm{
@@ -466,7 +515,7 @@ footer{
         @include my-padding-mixin(20px 0)
     }
     .custom-control-label::before, .custom-control-label::after{
-        top: 19px;
+        top: 62px;
     }
  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
@@ -486,15 +535,6 @@ footer{
     }
     .common-div{
         @include my-padding-mixin(100px 0)
-    }
-    #leap{
-        .btn-primary{
-            width: 40%;
-            .fa-chevron-right{
-                right: 14px;
-                top: 15px;
-            }
-        }
     }
  } /* min-width 641px, medium screens */
 

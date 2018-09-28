@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
       <div class="container">
-  <a class="navbar-brand" href="#"><img  v-bind:src="logo.logo" alt="MS Azure Cosmos DB"/></a>
+  <a class="navbar-brand col-lg-2 col-sm-4 col-xs-4 col-md-2" href="#"><img class="img-fluid"  v-bind:src="logo.logo" alt="MS Azure Cosmos DB"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

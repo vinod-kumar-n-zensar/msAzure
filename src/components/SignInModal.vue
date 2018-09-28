@@ -79,8 +79,7 @@
   </div>
 </div>
 </template>
-<script>MktoForms2.loadForm("//app-sj18.marketo.com", "157-GQE-382", 10595);</script>
-import func from "./vue-temp/vue-editor-bridge";
+<script>MktoForms2.loadForm("//app-sj18.marketo.com", "157-GQE-382", 14282);</script>
 
 <script>
   import Vue from 'vue';

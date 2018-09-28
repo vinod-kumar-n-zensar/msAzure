@@ -12,7 +12,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import vSelect from 'vue-select';
 import VueMatchHeights from 'vue-match-heights';
-
+import $ from 'jquery'; 
 Vue.use(VueMatchHeights, {
 });
 Vue.use(VueScrollTo)
@@ -26,6 +26,7 @@ new Vue({
       easing: 'ease-in-out-sine',
       duration: 600,
     });
+    $("*"). removeAttr("data-grid");
   },
   el: '#app',
   render (h){

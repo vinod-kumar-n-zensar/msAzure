@@ -42,9 +42,9 @@ module.exports = {
       }
     ]
   },
-  /*optimization: {
-    minimizer: [new UglifyJsPlugin()]
-  },*/
+  //optimization: {
+ //   minimizer: [new UglifyJsPlugin()]
+ // },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
@@ -53,8 +53,8 @@ module.exports = {
       template: 'index.html',
       inject: true
     }),
-    /*new UglifyJsPlugin({
-      test: /\.js(\?.*)?$/i
-    })*/
+  //  new UglifyJsPlugin({
+   //   test: /\.js(\?.*)?$/i
+    //})
   ]
 }

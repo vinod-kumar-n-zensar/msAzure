@@ -55,7 +55,7 @@
                         
                     </ul>
                      <section>
-                    <div class="d-none d-md-block  d-lg-block d-xl-block commonGutSpaceTop">
+                    <div class="d-none d-md-block  d-lg-block d-xl-block commonGutSpaceTop sliderBox">
                         <vue-slider class="cursor-pointer" ref="slider" v-bind="demo.demo1" v-model="demo.demo1.value" @callback="signalChange()"></vue-slider>
                     </div>
                 </section>
@@ -111,9 +111,11 @@ Vue.component('vue-slider',vueSlider)
             return {
                 demo: {
                     demo1: {
-                    width:"100%",
+                    width:"96%",
                     style:{
-                        "padding":"0"
+                        "padding":"0",
+                        "margin": "auto",
+                        "transform": "0"
                     },
                     startAnimation: false,
                     value: 0,
@@ -138,7 +140,11 @@ Vue.component('vue-slider',vueSlider)
                         "Session",
                         "Consistent prefix",
                         "Eventual "
-                    ],                                                                          
+                    ],
+                    labelStyle:{
+                        "width": "auto",
+                        "text-align": "center"
+                    }                                                                          
                     },
                     }
              }
@@ -166,10 +172,10 @@ Vue.component('vue-slider',vueSlider)
                     }
                 },
                 signalChange: function(event){
-                    let val = this.demo.demo1.value;
+                    let val = $.trim(this.demo.demo1.value);
                     $('.vue-slider-piecewise-item').removeClass('active');
                     $('.vue-slider-piecewise-item').each( function (index) {
-                        $(this).find('.vue-slider-piecewise-label').text().trim() == $.trim(val) ?  $(this).addClass('active') : '';
+                        $(this).find('.vue-slider-piecewise-label').text().trim() == val ?  $(this).addClass('active') : '';
                     })
                     this.swithFn(val);
                 },
