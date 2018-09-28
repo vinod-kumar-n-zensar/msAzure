@@ -45,7 +45,7 @@ body{
     background-size:cover;
 }
 #dbcosmos.common-banner-fix{
-        background-position: 50%;
+    background-position: center top;
 }
 // Slider 
 .vue-slider-component .vue-slider-process{
@@ -110,6 +110,9 @@ footer{
     .common-page-head{
         @include my-padding-mixin(80px 0)
     }
+    h1{
+        font-weight: 700;
+    }
 }
 .svg-inline--fa{
     vertical-align: baseline
@@ -120,6 +123,9 @@ footer{
 }
 .dropdown-toggle::after{
     border: none;
+}
+.dropdown-toggle{
+    border: .0625rem solid rgba(0,0,0,.4);
 }
 select, .v-select input[type=search], .v-select input[type=search]:focus, .v-select.single .selected-tag, .vs__selected-options{
     font-size: 1rem;
@@ -203,6 +209,9 @@ select, .v-select input[type=search], .v-select input[type=search]:focus, .v-sel
 .vue-slider-piecewise-item.active .vue-slider-piecewise-label{
     color: $bgColorPrimary;
 }
+.vue-slider-component .vue-slider-tooltip-wrap.vue-merged-tooltip{
+    display: none;
+}
 span.vue-slider-piecewise-label{
     font-size: 14.5px !important;
     font-weight: 700;
@@ -211,6 +220,14 @@ span.vue-slider-piecewise-label{
     }
 }
 .modal-body {
+    .form-control{
+        border: 1px solid #ced4da;
+    }
+    .dropdown-toggle {
+        .form-control{
+            border:none;
+        }
+    }
     .form-control, .dropdown-toggle{
         width: 98%;
         border-radius: 0;
@@ -378,7 +395,7 @@ footer{
     @include my-padding-mixin(50px 0)
 }
 .db-link-box{
-    margin-top:40%;
+    margin-top:69%;
 }
 //Btn Animations
 #leap{
@@ -504,7 +521,6 @@ footer{
     }
     #leap{
         .btn-primary{
-            width:70%;
             font-size: 16.5px;
         }
     }
@@ -559,6 +575,9 @@ footer{
             background-position: 50%;
         }
     }
+    .prefixTitle{
+        padding-bottom: 100px;
+    }
  } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
  @media only screen and (width : 1024px) {
@@ -577,10 +596,17 @@ footer{
             color: $fontColor;
         }
     }
-    
+    .prefixTitle{
+        padding-bottom: 100px;
+    }
 }
 // Large screens
 @media only screen and (min-width: 64.063em) {
+    #deliver {
+        .common-page-head {
+            @include my-padding-mixin(100px 0)
+        }
+    }
     .prefixTitle{
         padding-bottom: 100px;
     }
@@ -658,11 +684,6 @@ footer{
     .common-card-padd{
         @include my-padding-mixin(100px 0)
     }
-    #leap{
-        .btn-primary{
-            width: 50%;
-        }
-    }
     footer{
         .common-page-head{
             h2{
@@ -674,10 +695,21 @@ footer{
                 font-size: 18.75px;
             
             }
-        }       
+        }    
+        .db-link-box{
+            #AzureCosmosDBLink{
+                width: 37%;
+            }
+        }   
     }
     .db-link-box{
-        margin-top: 40%;
+        margin-top: 43%;
+    }
+    #leap .toggleVolume{
+        padding-top: 10px;
+    }
+    .copyriteText-container p{
+        font-size: 12.75px;
     }
 } /* min-width 1025px, large screens */
 
